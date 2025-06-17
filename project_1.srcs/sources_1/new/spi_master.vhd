@@ -64,7 +64,8 @@ BEGIN
                         IF clk_div_counter = 250 THEN -- Toggle SCK
                             clk_div_counter <= 0;
                             spi_sck_int <= NOT spi_sck_int;
-                            IF spi_sck_int = '1' THEN -- Sample MISO on falling edge (after toggle)
+                            -- IF spi_sck_int = '1' THEN -- Sample MISO on falling edge
+                            IF spi_sck_int = '0' THEN -- Sample MISO on rising edge
                                 miso_buffer(11 - bit_count) <= miso;
                                 bit_count <= bit_count + 1;
                             END IF;

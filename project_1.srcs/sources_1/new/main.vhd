@@ -23,8 +23,6 @@ END main;
 ARCHITECTURE Behavioral OF main IS
 
 
-    signal distance_val : unsigned(19 downto 0);
-    signal distance_cm  : STD_LOGIC_VECTOR(7 downto 0);
     signal lcd_reset    : std_logic := '0';
     
     component lcd
@@ -61,14 +59,16 @@ ARCHITECTURE Behavioral OF main IS
     SIGNAL spi_data_out : STD_LOGIC_VECTOR(23 DOWNTO 0) := (OTHERS => '0');
     SIGNAL spi_start_pulse : STD_LOGIC := '0'; -- New signal for SPI start pulse
 
-    SIGNAL counter : INTEGER RANGE 0 TO 99999999 := 0; -- Counter for triggering SPI (adjust range as needed)
+    SIGNAL lcd_clk_cnt : INTEGER RANGE 0 TO 200000000 := 0;
+
+    SIGNAL counter : INTEGER RANGE 0 TO 10000002 := 0; -- Counter for triggering SPI (adjust range as needed)
     SIGNAL counter_limit : INTEGER := 10000000; -- Send every 100ms (100MHz clock / 10000000)
 
     SIGNAL ref_command : STD_LOGIC_VECTOR(23 DOWNTO 0) := x"204000"; -- REF command: Internal 2.5V
     SIGNAL power_command : STD_LOGIC_VECTOR(23 DOWNTO 0) := x"400000"; -- POWER command: Normal operation
     SIGNAL voltage_command : STD_LOGIC_VECTOR(23 DOWNTO 0) := x"123456"; -- POWER command: Normal operation
 
-    TYPE state_type IS (IDLE, SEND_REF, SEND_POWER, RUN, END_COMM, RECEIVE_DATA); -- Added RECEIVE_DATA state
+    TYPE state_type IS (IDLE, END_COMM, RECEIVE_DATA); -- Added RECEIVE_DATA state
     SIGNAL current_state : state_type := IDLE;
     SIGNAL next_state : state_type := IDLE;
 
@@ -101,18 +101,17 @@ BEGIN
         miso_data_out => spi_miso_data -- Connect the 12-bit MISO data
     );
 
-    
-    -- LDAC control process
-    PROCESS (Clock100MHz)
-    BEGIN
-        IF rising_edge(Clock100MHz) THEN
-            IF current_state = IDLE THEN
-                LDAC <= '0';
-            ELSE
-                LDAC <= '1';
-            END IF;
+    lcd_refresh : process( Clock100MHz )
+    begin
+        
+        IF lcd_clk_cnt > 100000000 THEN
+            lcd_reset <= '1';
+            lcd_clk_cnt <= 0;
+        ELSE
+            lcd_reset <= '0';
         END IF;
-    END PROCESS;
+        lcd_clk_cnt <= lcd_clk_cnt + 1;
+    end process ; -- lcd_refresh
 
     -- State machine to send configuration commands and data
     PROCESS (Clock100MHz)
@@ -120,23 +119,13 @@ BEGIN
         IF rising_edge(Clock100MHz) THEN
             spi_start_pulse <= '0'; -- Default to low
 
-            -- Counter logic
-            IF counter < counter_limit - 1 THEN
-                counter <= counter + 1;
-            ELSE
-                counter <= 0;
-            END IF;
-
             CASE current_state IS
                 WHEN IDLE =>
-                    IF counter = 0 THEN -- Trigger when counter reaches limit
-                        next_state <= SEND_REF;
-                    END IF;
-                WHEN SEND_REF =>
-                    IF spi_busy = '0' THEN
-                        spi_data_out <= ref_command;
-                        spi_start_pulse <= '1'; -- Start REF command
-                        next_state <= RECEIVE_DATA; -- Transition to RECEIVE_DATA after sending
+                    counter <= counter + 1;
+                    IF counter >= counter_limit THEN -- Trigger when counter reaches limit
+                        next_state <= RECEIVE_DATA;
+                        spi_start_pulse <= '1'; -- Default to low
+                        counter <= 0;
                     END IF;
                 WHEN RECEIVE_DATA => -- New state to handle received data
                     IF spi_busy = '0' THEN
@@ -148,12 +137,6 @@ BEGIN
                     IF spi_busy = '0' THEN
                         next_state <= IDLE; -- Go back to IDLE to restart the sequence
                     END IF;
-                WHEN SEND_POWER => -- Added missing state
-                    -- Add logic for SEND_POWER state if needed
-                    next_state <= RUN; -- Example transition
-                WHEN RUN => -- Added missing state
-                    -- Add logic for RUN state if needed
-                    next_state <= IDLE; -- Example transition
 
             END CASE;
             current_state <= next_state;

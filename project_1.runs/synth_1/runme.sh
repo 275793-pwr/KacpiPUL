@@ -21,7 +21,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/mati/Documents/pul/project_1.runs/synth_1'
+HD_PWD='/home/mati/Documents/KacpiPUL/project_1.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

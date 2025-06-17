@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Tue Jun 17 14:05:50 2025
+| Date         : Wed Jun 18 00:25:52 2025
 | Host         : temp-mati running 64-bit Linux Mint 22.1
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    18 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    65 |
+| Unused register locations in slices containing registers |    70 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -40,14 +40,14 @@ Table of Contents
 |       Fanout       | Count |
 +--------------------+-------+
 | Total control sets |    18 |
-| >= 0 to < 4        |     5 |
-| >= 4 to < 6        |     6 |
+| >= 0 to < 4        |     6 |
+| >= 4 to < 6        |     7 |
 | >= 6 to < 8        |     1 |
-| >= 8 to < 10       |     3 |
+| >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     1 |
-| >= 16              |     2 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              24 |           12 |
-| No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              52 |           14 |
-| Yes          | No                    | No                     |              35 |           13 |
-| Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |               8 |            2 |
+| No           | No                    | No                     |              21 |            8 |
+| No           | No                    | Yes                    |               5 |            4 |
+| No           | Yes                   | No                     |              16 |            4 |
+| Yes          | No                    | No                     |              38 |           12 |
+| Yes          | No                    | Yes                    |              26 |           10 |
+| Yes          | Yes                   | No                     |               8 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,24 +73,24 @@ Table of Contents
 +------------------------+----------------------------+------------------------------------------------------+------------------+----------------+--------------+
 |      Clock Signal      |        Enable Signal       |                   Set/Reset Signal                   | Slice Load Count | Bel Load Count | Bels / Slice |
 +------------------------+----------------------------+------------------------------------------------------+------------------+----------------+--------------+
+|  clk_BUFG              | U2/LCD_E_i_1_n_0           | U2/lcd_reset                                         |                1 |              1 |         1.00 |
+|  clk_BUFG              |                            |                                                      |                1 |              1 |         1.00 |
+|  clk_BUFG              | U2/LCD_RS_i_1_n_0          | U2/lcd_reset                                         |                1 |              1 |         1.00 |
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/spi_ss_int |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG |                            | LDAC_i_1_n_0                                         |                1 |              1 |         1.00 |
-|  clk_BUFG              | U2/LCD_RS_i_1_n_0          |                                                      |                1 |              1 |         1.00 |
-|  clk_BUFG              | U2/LCD_E_i_1_n_0           |                                                      |                1 |              1 |         1.00 |
-| ~clk_BUFG              |                            |                                                      |                2 |              2 |         1.00 |
+|  clk_BUFG              |                            | U2/lcd_reset                                         |                1 |              2 |         2.00 |
+| ~clk_BUFG              |                            | U2/lcd_reset                                         |                3 |              3 |         1.00 |
 |  clk_BUFG              | U2/reset_cnt[3]_i_1_n_0    |                                                      |                1 |              4 |         4.00 |
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/bit_count  | spi_master_inst/FSM_onehot_current_state_reg_n_0_[3] |                1 |              4 |         4.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/p_0_in_0   | spi_master_inst/FSM_onehot_current_state_reg_n_0_[3] |                1 |              4 |         4.00 |
-|  clk_BUFG              | U2/LCD_DATA[3]_i_1_n_0     |                                                      |                1 |              4 |         4.00 |
-|  clk_BUFG              | U2/next_command[4]_i_1_n_0 |                                                      |                2 |              5 |         2.50 |
-|  clk_BUFG              | U2/state[4]_i_1_n_0        |                                                      |                2 |              5 |         2.50 |
-|  clk_BUFG              | U2/char_no[5]_i_1_n_0      |                                                      |                2 |              6 |         3.00 |
-|  clk_BUFG              | U2/g0_b0_n_0               |                                                      |                2 |              8 |         4.00 |
-|  clk_BUFG              |                            |                                                      |                4 |              8 |         2.00 |
-|  Clock100MHz_IBUF_BUFG |                            | spi_master_inst/clk_div_counter[7]_i_1_n_0           |                2 |              8 |         4.00 |
-|  Clock100MHz_IBUF_BUFG |                            |                                                      |                6 |             14 |         2.33 |
-|  Clock100MHz_IBUF_BUFG |                            | U2/lcd_clk                                           |                4 |             16 |         4.00 |
-|  Clock100MHz_IBUF_BUFG |                            | clear                                                |                7 |             27 |         3.86 |
+|  clk_BUFG              | U2/LCD_DATA[3]_i_1_n_0     |                                                      |                2 |              4 |         2.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/p_0_in_1   | spi_master_inst/FSM_onehot_current_state_reg_n_0_[3] |                2 |              4 |         2.00 |
+|  clk_BUFG              | U2/state[4]_i_1_n_0        | U2/lcd_reset                                         |                1 |              5 |         5.00 |
+|  clk_BUFG              | U2/p_6_in                  |                                                      |                2 |              5 |         2.50 |
+|  clk_BUFG              | U2/next_command[4]_i_1_n_0 | U2/lcd_reset                                         |                2 |              5 |         2.50 |
+|  clk_BUFG              | U2/char_no[5]_i_1_n_0      | U2/lcd_reset                                         |                3 |              6 |         2.00 |
+|  clk_BUFG              | U2/g0_b0_n_0               | U2/lcd_reset                                         |                2 |              8 |         4.00 |
+|  Clock100MHz_IBUF_BUFG |                            | U2/lcd_clk_cnt[0]_i_1_n_0                            |                4 |             16 |         4.00 |
+|  Clock100MHz_IBUF_BUFG |                            |                                                      |                7 |             20 |         2.86 |
+|  Clock100MHz_IBUF_BUFG | counter[0]_i_1_n_0         |                                                      |                6 |             24 |         4.00 |
 +------------------------+----------------------------+------------------------------------------------------+------------------+----------------+--------------+
 
 

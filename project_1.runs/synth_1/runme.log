@@ -7,13 +7,13 @@
   **** SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
   **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
   **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-  **** Start of session at: Tue Jun 17 14:04:45 2025
+  **** Start of session at: Wed Jun 18 00:24:46 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source main.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental /home/mati/Documents/pul/project_1.srcs/utils_1/imports/synth_1/main.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from /home/mati/Documents/pul/project_1.srcs/utils_1/imports/synth_1/main.dcp for incremental synthesis
+Command: read_checkpoint -auto_incremental -incremental /home/mati/Documents/KacpiPUL/project_1.srcs/utils_1/imports/synth_1/main.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/mati/Documents/KacpiPUL/project_1.srcs/utils_1/imports/synth_1/main.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top main -part xc7a35ticsg324-1L
 Starting synth_design
@@ -24,21 +24,23 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 390341
+INFO: [Synth 8-7075] Helper process launched with PID 50468
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2114.012 ; gain = 438.742 ; free physical = 17405 ; free virtual = 26542
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2114.457 ; gain = 439.711 ; free physical = 1570 ; free virtual = 23636
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'main' [/home/mati/Documents/pul/project_1.srcs/sources_1/new/main.vhd:23]
-INFO: [Synth 8-3491] module 'lcd' declared at '/home/mati/Documents/pul/project_1.srcs/sources_1/new/lcd.vhd:5' bound to instance 'U2' of component 'lcd' [/home/mati/Documents/pul/project_1.srcs/sources_1/new/main.vhd:78]
-INFO: [Synth 8-638] synthesizing module 'lcd' [/home/mati/Documents/pul/project_1.srcs/sources_1/new/lcd.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'lcd' (0#1) [/home/mati/Documents/pul/project_1.srcs/sources_1/new/lcd.vhd:17]
-INFO: [Synth 8-3491] module 'spi_master' declared at '/home/mati/Documents/pul/project_1.srcs/sources_1/new/spi_master.vhd:5' bound to instance 'spi_master_inst' of component 'spi_master' [/home/mati/Documents/pul/project_1.srcs/sources_1/new/main.vhd:91]
-INFO: [Synth 8-638] synthesizing module 'spi_master' [/home/mati/Documents/pul/project_1.srcs/sources_1/new/spi_master.vhd:19]
-INFO: [Synth 8-256] done synthesizing module 'spi_master' (0#1) [/home/mati/Documents/pul/project_1.srcs/sources_1/new/spi_master.vhd:19]
-INFO: [Synth 8-256] done synthesizing module 'main' (0#1) [/home/mati/Documents/pul/project_1.srcs/sources_1/new/main.vhd:23]
-WARNING: [Synth 8-3848] Net data_out in module/entity spi_master does not have driver. [/home/mati/Documents/pul/project_1.srcs/sources_1/new/spi_master.vhd:14]
-WARNING: [Synth 8-3848] Net SPI_MOSI in module/entity main does not have driver. [/home/mati/Documents/pul/project_1.srcs/sources_1/new/main.vhd:17]
-WARNING: [Synth 8-3848] Net spi_miso_in in module/entity main does not have driver. [/home/mati/Documents/pul/project_1.srcs/sources_1/new/main.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'main' [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/main.vhd:23]
+INFO: [Synth 8-3491] module 'lcd' declared at '/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/lcd.vhd:5' bound to instance 'U2' of component 'lcd' [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/main.vhd:78]
+INFO: [Synth 8-638] synthesizing module 'lcd' [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/lcd.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'lcd' (0#1) [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/lcd.vhd:17]
+INFO: [Synth 8-3491] module 'spi_master' declared at '/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/spi_master.vhd:5' bound to instance 'spi_master_inst' of component 'spi_master' [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/main.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'spi_master' [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/spi_master.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'spi_master' (0#1) [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/spi_master.vhd:19]
+WARNING: [Synth 8-614] signal 'lcd_clk_cnt' is read in the process but is not in the sensitivity list [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/main.vhd:104]
+INFO: [Synth 8-256] done synthesizing module 'main' (0#1) [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/main.vhd:23]
+WARNING: [Synth 8-3848] Net data_out in module/entity spi_master does not have driver. [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/spi_master.vhd:14]
+WARNING: [Synth 8-3848] Net SPI_MOSI in module/entity main does not have driver. [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/main.vhd:17]
+WARNING: [Synth 8-3848] Net LDAC in module/entity main does not have driver. [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/main.vhd:19]
+WARNING: [Synth 8-3848] Net spi_miso_in in module/entity main does not have driver. [/home/mati/Documents/KacpiPUL/project_1.srcs/sources_1/new/main.vhd:57]
 WARNING: [Synth 8-7129] Port data_out[23] in module spi_master is either unconnected or has no load
 WARNING: [Synth 8-7129] Port data_out[22] in module spi_master is either unconnected or has no load
 WARNING: [Synth 8-7129] Port data_out[21] in module spi_master is either unconnected or has no load
@@ -88,91 +90,92 @@ WARNING: [Synth 8-7129] Port data_in[2] in module spi_master is either unconnect
 WARNING: [Synth 8-7129] Port data_in[1] in module spi_master is either unconnected or has no load
 WARNING: [Synth 8-7129] Port data_in[0] in module spi_master is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SPI_MOSI in module main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LDAC in module main is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[3] in module main is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[2] in module main is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[1] in module main is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[0] in module main is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2189.980 ; gain = 514.711 ; free physical = 17303 ; free virtual = 26441
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2190.426 ; gain = 515.680 ; free physical = 1476 ; free virtual = 23542
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2207.793 ; gain = 532.523 ; free physical = 17303 ; free virtual = 26441
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2208.238 ; gain = 533.492 ; free physical = 1476 ; free virtual = 23542
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2207.793 ; gain = 532.523 ; free physical = 17303 ; free virtual = 26441
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2208.238 ; gain = 533.492 ; free physical = 1476 ; free virtual = 23542
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2207.793 ; gain = 0.000 ; free physical = 17303 ; free virtual = 26441
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2208.238 ; gain = 0.000 ; free physical = 1476 ; free virtual = 23542
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc]
-WARNING: [Vivado 12-584] No ports matched 'BUTTON[0]'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:179]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:179]
+Parsing XDC File [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc]
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[0]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:179]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:179]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BUTTON[0]'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:180]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:180]
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[0]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:180]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:180]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'TRIG'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:208]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:208]
+WARNING: [Vivado 12-584] No ports matched 'TRIG'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:208]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:208]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'TRIG'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:209]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:209]
+WARNING: [Vivado 12-584] No ports matched 'TRIG'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:209]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:209]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ECHO'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:210]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:210]
+WARNING: [Vivado 12-584] No ports matched 'ECHO'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:210]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:210]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ECHO'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:211]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:211]
+WARNING: [Vivado 12-584] No ports matched 'ECHO'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:211]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:211]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BUTTON[1]'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:213]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:213]
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[1]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:213]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:213]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BUTTON[2]'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:214]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:214]
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[2]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:214]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:214]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BUTTON[3]'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:215]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:215]
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[3]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:215]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:215]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BUTTON[3]'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:216]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:216]
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[3]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:216]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:216]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BUTTON[2]'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:217]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:217]
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[2]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:217]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:217]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'BUTTON[1]'. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:218]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc:218]
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[1]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:218]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:218]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/mati/Documents/pul/project_1.srcs/constrs_1/new/pinout.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Finished Parsing XDC File [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2334.531 ; gain = 0.000 ; free physical = 17303 ; free virtual = 26441
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2332.977 ; gain = 0.000 ; free physical = 1476 ; free virtual = 23542
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2334.566 ; gain = 0.000 ; free physical = 17303 ; free virtual = 26441
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2333.012 ; gain = 0.000 ; free physical = 1476 ; free virtual = 23542
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2334.566 ; gain = 659.297 ; free physical = 17307 ; free virtual = 26445
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2333.012 ; gain = 658.266 ; free physical = 1516 ; free virtual = 23582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2342.535 ; gain = 667.266 ; free physical = 17307 ; free virtual = 26445
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2340.980 ; gain = 666.234 ; free physical = 1516 ; free virtual = 23582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2342.535 ; gain = 667.266 ; free physical = 17307 ; free virtual = 26445
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2340.980 ; gain = 666.234 ; free physical = 1516 ; free virtual = 23582
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'spi_master'
 ---------------------------------------------------------------------------------------------------
@@ -186,27 +189,26 @@ INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in modul
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'spi_master'
 WARNING: [Synth 8-12595] Onehot encoded FSM with state register 'current_state_reg' is not having reset. This may cause incorrect behavior. User should consider using FSM_SAFE_STATE attribute on the register
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2342.535 ; gain = 667.266 ; free physical = 17309 ; free virtual = 26448
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2340.980 ; gain = 666.234 ; free physical = 1523 ; free virtual = 23591
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input   28 Bit       Adders := 1     
 	   2 Input    8 Bit       Adders := 1     
 	   2 Input    6 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 1     
 	   2 Input    4 Bit       Adders := 2     
 +---Registers : 
-	               24 Bit    Registers := 1     
 	               12 Bit    Registers := 1     
 	                8 Bit    Registers := 4     
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 2     
 	                4 Bit    Registers := 3     
-	                3 Bit    Registers := 2     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 11    
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 10    
 +---Muxes : 
 	   2 Input   12 Bit        Muxes := 2     
 	   4 Input   12 Bit        Muxes := 1     
@@ -219,14 +221,12 @@ Detailed RTL Component Info :
 	   2 Input    5 Bit        Muxes := 2     
 	   3 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 2     
-	   7 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 1     
-	   4 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 1     
 	  19 Input    1 Bit        Muxes := 10    
-	   2 Input    1 Bit        Muxes := 12    
+	   2 Input    1 Bit        Muxes := 11    
 	   3 Input    1 Bit        Muxes := 3     
-	   4 Input    1 Bit        Muxes := 4     
-	   7 Input    1 Bit        Muxes := 3     
+	   4 Input    1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -244,12 +244,13 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-7129] Port SPI_MOSI in module main is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LDAC in module main is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[3] in module main is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[2] in module main is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[1] in module main is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SW[0] in module main is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2342.535 ; gain = 667.266 ; free physical = 17304 ; free virtual = 26448
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2340.980 ; gain = 666.234 ; free physical = 1511 ; free virtual = 23582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -270,19 +271,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2363.535 ; gain = 688.266 ; free physical = 17245 ; free virtual = 26388
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2364.980 ; gain = 690.234 ; free physical = 1440 ; free virtual = 23512
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2393.582 ; gain = 718.312 ; free physical = 17221 ; free virtual = 26365
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2405.035 ; gain = 730.289 ; free physical = 1408 ; free virtual = 23480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2394.590 ; gain = 719.320 ; free physical = 17213 ; free virtual = 26357
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2413.043 ; gain = 738.297 ; free physical = 1401 ; free virtual = 23472
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -300,37 +301,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2557.402 ; gain = 882.133 ; free physical = 17157 ; free virtual = 26301
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2559.855 ; gain = 885.109 ; free physical = 1297 ; free virtual = 23369
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2557.402 ; gain = 882.133 ; free physical = 17157 ; free virtual = 26301
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2559.855 ; gain = 885.109 ; free physical = 1297 ; free virtual = 23369
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2557.402 ; gain = 882.133 ; free physical = 17157 ; free virtual = 26301
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2559.855 ; gain = 885.109 ; free physical = 1297 ; free virtual = 23369
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2557.402 ; gain = 882.133 ; free physical = 17157 ; free virtual = 26301
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2559.855 ; gain = 885.109 ; free physical = 1297 ; free virtual = 23369
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2557.402 ; gain = 882.133 ; free physical = 17157 ; free virtual = 26301
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2559.855 ; gain = 885.109 ; free physical = 1297 ; free virtual = 23369
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2557.402 ; gain = 882.133 ; free physical = 17157 ; free virtual = 26301
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2559.855 ; gain = 885.109 ; free physical = 1297 ; free virtual = 23369
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -347,44 +348,46 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     2|
-|2     |CARRY4 |    15|
-|3     |LUT1   |    11|
-|4     |LUT2   |    31|
-|5     |LUT3   |    19|
-|6     |LUT4   |    17|
-|7     |LUT5   |    15|
-|8     |LUT6   |    36|
-|9     |FDRE   |   118|
-|10    |FDSE   |     1|
-|11    |IBUF   |     1|
-|12    |OBUF   |    17|
-|13    |OBUFT  |     1|
+|2     |CARRY4 |    20|
+|3     |LUT1   |     6|
+|4     |LUT2   |    53|
+|5     |LUT3   |    22|
+|6     |LUT4   |    24|
+|7     |LUT5   |    22|
+|8     |LUT6   |    25|
+|9     |FDCE   |    27|
+|10    |FDPE   |     4|
+|11    |FDRE   |    82|
+|12    |FDSE   |     1|
+|13    |IBUF   |     1|
+|14    |OBUF   |    16|
+|15    |OBUFT  |     2|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2557.402 ; gain = 882.133 ; free physical = 17157 ; free virtual = 26301
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2559.855 ; gain = 885.109 ; free physical = 1297 ; free virtual = 23369
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2557.402 ; gain = 755.359 ; free physical = 17157 ; free virtual = 26300
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2557.410 ; gain = 882.133 ; free physical = 17157 ; free virtual = 26300
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2559.855 ; gain = 760.336 ; free physical = 1289 ; free virtual = 23361
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2559.863 ; gain = 885.109 ; free physical = 1289 ; free virtual = 23361
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2557.410 ; gain = 0.000 ; free physical = 17157 ; free virtual = 26300
-INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2559.863 ; gain = 0.000 ; free physical = 1289 ; free virtual = 23361
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2613.430 ; gain = 0.000 ; free physical = 17228 ; free virtual = 26371
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2615.883 ; gain = 0.000 ; free physical = 1453 ; free virtual = 23525
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: b3486c1f
+Synth Design complete | Checksum: 27354719
 INFO: [Common 17-83] Releasing license: Synthesis
-31 Infos, 75 Warnings, 12 Critical Warnings and 0 Errors encountered.
+31 Infos, 79 Warnings, 12 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 2613.465 ; gain = 1040.531 ; free physical = 17228 ; free virtual = 26371
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1828.384; main = 1745.807; forked = 275.646
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3365.855; main = 2613.434; forked = 971.262
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:31 . Memory (MB): peak = 2615.918 ; gain = 1013.695 ; free physical = 1456 ; free virtual = 23528
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1747.896; main = 1747.896; forked = 276.214
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3312.246; main = 2615.887; forked = 971.262
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2637.441 ; gain = 0.000 ; free physical = 17228 ; free virtual = 26371
-INFO: [Common 17-1381] The checkpoint '/home/mati/Documents/pul/project_1.runs/synth_1/main.dcp' has been generated.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2639.895 ; gain = 0.000 ; free physical = 1456 ; free virtual = 23528
+INFO: [Common 17-1381] The checkpoint '/home/mati/Documents/KacpiPUL/project_1.runs/synth_1/main.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jun 17 14:05:02 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Jun 18 00:25:24 2025...

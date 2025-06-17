@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Tue Jun 17 14:06:21 2025
+| Date         : Wed Jun 18 00:26:16 2025
 | Host         : temp-mati running 64-bit Linux Mint 22.1
 | Command      : report_methodology -file main_methodology_drc_routed.rpt -pb main_methodology_drc_routed.pb -rpx main_methodology_drc_routed.rpx
 | Design       : main
@@ -23,12 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 47
+             Checks found: 76
 +-----------+------------------+-------------------------------+--------+
 | Rule      | Severity         | Description                   | Checks |
 +-----------+------------------+-------------------------------+--------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 44     |
-| TIMING-18 | Warning          | Missing input or output delay | 3      |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 45     |
+| LUTAR-1   | Warning          | LUT drives async reset alert  | 1      |
+| TIMING-18 | Warning          | Missing input or output delay | 2      |
+| TIMING-23 | Warning          | Combinational loop found      | 28     |
 +-----------+------------------+-------------------------------+--------+
 
 2. REPORT DETAILS
@@ -245,27 +247,177 @@ Related violations: <none>
 
 TIMING-17#43 Critical Warning
 Non-clocked sequential cell  
-The clock pin U2/znak_reg[4]/C is not reached by a timing clock
+The clock pin U2/znak_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#44 Critical Warning
 Non-clocked sequential cell  
+The clock pin U2/znak_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#45 Critical Warning
+Non-clocked sequential cell  
 The clock pin U2/znak_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell U2/line_no[1]_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) U2/line_no_reg[0]/PRE, U2/line_no_reg[1]/CLR, U2/next_command_reg[0]/PRE,
+U2/next_command_reg[1]/CLR, U2/next_command_reg[2]/CLR,
+U2/next_command_reg[3]/CLR, U2/next_command_reg[4]/CLR,
+U2/state_reg[0]/CLR, U2/state_reg[1]/CLR, U2/state_reg[2]/CLR,
+U2/state_reg[3]/CLR, U2/state_reg[4]/CLR, U2/znak_reg[3]/PRE,
+U2/znak_reg[4]/CLR, U2/znak_reg[5]/CLR (the first 15 of 31 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-18#1 Warning
 Missing input or output delay  
-An output delay is missing on LDAC relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+An output delay is missing on SPI_SCK relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An output delay is missing on SPI_SCK relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+An output delay is missing on SPI_SS relative to the rising and/or falling clock edge(s) of sys_clk_pin.
 Related violations: <none>
 
-TIMING-18#3 Warning
-Missing input or output delay  
-An output delay is missing on SPI_SS relative to the rising and/or falling clock edge(s) of sys_clk_pin.
+TIMING-23#1 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_13/S[0] and U2/line_no_reg[1]_i_13/O[0] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#2 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_13/S[1] and U2/line_no_reg[1]_i_13/O[1] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#3 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_13/S[2] and U2/line_no_reg[1]_i_13/O[2] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#4 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_13/S[3] and U2/line_no_reg[1]_i_13/O[3] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#5 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_15/S[0] and U2/line_no_reg[1]_i_15/O[0] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#6 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_15/S[1] and U2/line_no_reg[1]_i_15/O[1] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#7 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_15/S[2] and U2/line_no_reg[1]_i_15/O[2] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#8 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_15/S[3] and U2/line_no_reg[1]_i_15/O[3] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#9 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_16/S[0] and U2/line_no_reg[1]_i_16/O[0] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#10 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_16/S[1] and U2/line_no_reg[1]_i_16/O[1] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#11 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_16/S[2] and U2/line_no_reg[1]_i_16/O[2] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#12 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_16/S[3] and U2/line_no_reg[1]_i_16/O[3] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#13 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_17/S[0] and U2/line_no_reg[1]_i_17/O[0] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#14 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_17/S[1] and U2/line_no_reg[1]_i_17/O[1] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#15 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_17/S[2] and U2/line_no_reg[1]_i_17/O[2] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#16 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_17/S[3] and U2/line_no_reg[1]_i_17/O[3] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#17 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_5/S[0] and U2/line_no_reg[1]_i_5/O[0] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#18 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_5/S[1] and U2/line_no_reg[1]_i_5/O[1] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#19 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_5/S[2] and U2/line_no_reg[1]_i_5/O[2] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#20 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_5/S[3] and U2/line_no_reg[1]_i_5/O[3] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#21 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_8/S[0] and U2/line_no_reg[1]_i_8/O[0] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#22 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_8/S[1] and U2/line_no_reg[1]_i_8/O[1] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#23 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_8/S[2] and U2/line_no_reg[1]_i_8/O[2] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#24 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_8/S[3] and U2/line_no_reg[1]_i_8/O[3] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#25 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_9/S[0] and U2/line_no_reg[1]_i_9/O[0] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#26 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_9/S[1] and U2/line_no_reg[1]_i_9/O[1] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#27 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_9/S[2] and U2/line_no_reg[1]_i_9/O[2] to disable the timing loop
+Related violations: <none>
+
+TIMING-23#28 Warning
+Combinational loop found  
+A timing loop has been detected on a combinational path. A timing arc has been disabled between U2/line_no_reg[1]_i_9/S[3] and U2/line_no_reg[1]_i_9/O[3] to disable the timing loop
 Related violations: <none>
 
 
