@@ -9,8 +9,7 @@ ENTITY lcd IS
         LCD_RS : OUT STD_LOGIC;
         LCD_E : OUT STD_LOGIC;
         LCD_DATA : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
-        spi_miso_data : IN STD_LOGIC_VECTOR (11 DOWNTO 0);
-        DEBUG : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+        spi_miso_data : IN STD_LOGIC_VECTOR (11 DOWNTO 0)
     );
 END lcd;
 
@@ -97,7 +96,6 @@ BEGIN
                 state <= RETURN_HOME;
                 next_command <= WRITE_CHAR;
             ELSE
-                DEBUG <= STD_LOGIC_VECTOR(to_unsigned(STATE_TYPE'pos(state), 8));
                 CASE state IS
                     WHEN CONFIGURATION1 =>
                         LCD_RS <= '0';

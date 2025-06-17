@@ -1,0 +1,97 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Wed Jun 18 00:36:46 2025
+# Process ID         : 84430
+# Current directory  : /home/mati/Documents/KacpiPUL/project_1.runs/impl_1
+# Command line       : vivado -log main.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source main.tcl -notrace
+# Log file           : /home/mati/Documents/KacpiPUL/project_1.runs/impl_1/main.vdi
+# Journal file       : /home/mati/Documents/KacpiPUL/project_1.runs/impl_1/vivado.jou
+# Running On         : temp-mati
+# Platform           : Linuxmint
+# Operating System   : Linux Mint 22.1
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13620H
+# CPU Frequency      : 1032.156 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 16
+# Host memory        : 33258 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 35405 MB
+# Available Virtual  : 25852 MB
+#-----------------------------------------------------------
+source main.tcl -notrace
+Command: link_design -top main -part xc7a35ticsg324-1L
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1683.918 ; gain = 0.000 ; free physical = 1740 ; free virtual = 24076
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc]
+WARNING: [Vivado 12-584] No ports matched 'SPI_MOSI'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:171]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:171]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SPI_MOSI'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:172]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:172]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[0]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:179]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:179]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[0]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:180]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:180]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRIG'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:208]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:208]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'TRIG'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:209]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:209]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ECHO'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:210]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:210]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ECHO'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:211]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:211]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[1]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:213]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:213]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[2]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:214]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:214]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[3]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:215]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:215]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[3]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:216]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:216]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[2]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:217]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:217]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BUTTON[1]'. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:218]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc:218]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/mati/Documents/KacpiPUL/project_1.srcs/constrs_1/new/pinout.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1858.586 ; gain = 0.000 ; free physical = 1613 ; free virtual = 23968
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 14 Warnings, 14 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35ti'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.89 ; elapsed = 00:00:00.32 . Memory (MB): peak = 1975.586 ; gain = 106.059 ; free physical = 1530 ; free virtual = 23888
+
+Starting Cache Timing Information Task

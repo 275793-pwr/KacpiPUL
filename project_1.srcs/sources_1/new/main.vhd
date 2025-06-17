@@ -5,18 +5,15 @@ USE IEEE.numeric_std.ALL;
 
 ENTITY main IS
     PORT (
-        SW : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 
         LCD_RS : OUT STD_LOGIC;
         LCD_E : OUT STD_LOGIC;
         LCD_DATA   : out STD_LOGIC_VECTOR (3 downto 0);
       
         Clock100MHz : IN STD_LOGIC;
-        DEBUG : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
         SPI_SCK : OUT STD_LOGIC;
-        SPI_MOSI : OUT STD_LOGIC;
-        SPI_SS : OUT STD_LOGIC;
-        LDAC : OUT STD_LOGIC
+        SPI_MISO : IN STD_LOGIC;
+        SPI_SS : OUT STD_LOGIC
     );
 END main;
 
@@ -32,8 +29,7 @@ ARCHITECTURE Behavioral OF main IS
             LCD_RS      : out STD_LOGIC;
             LCD_E       : out STD_LOGIC;
             LCD_DATA    : out STD_LOGIC_VECTOR (3 downto 0);
-            spi_miso_data : in  STD_LOGIC_VECTOR(11 downto 0);
-            DEBUG: out STD_LOGIC_VECTOR(7 downto 0)
+            spi_miso_data : in  STD_LOGIC_VECTOR(11 downto 0)
         );
     end component;
     
@@ -41,22 +37,17 @@ ARCHITECTURE Behavioral OF main IS
         PORT (
             clk : IN STD_LOGIC;
             start : IN STD_LOGIC;
-            data_in : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
             sck : OUT STD_LOGIC;
             -- mosi : OUT STD_LOGIC;
             miso : IN STD_LOGIC;  -- Added MISO input to component declaration
             ss : OUT STD_LOGIC;
             busy : OUT STD_LOGIC;
-            data_out : OUT STD_LOGIC_VECTOR(23 DOWNTO 0); -- Added data_out to component declaration
             miso_data_out : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
         );
     END COMPONENT;
 
     SIGNAL spi_busy : STD_LOGIC;
     SIGNAL spi_miso_data : STD_LOGIC_VECTOR(11 DOWNTO 0); -- Signal to store 12-bit MISO data
-    SIGNAL spi_miso_in : STD_LOGIC; -- Signal to store MISO input
-    SIGNAL data_received : STD_LOGIC_VECTOR(23 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL spi_data_out : STD_LOGIC_VECTOR(23 DOWNTO 0) := (OTHERS => '0');
     SIGNAL spi_start_pulse : STD_LOGIC := '0'; -- New signal for SPI start pulse
 
     SIGNAL lcd_clk_cnt : INTEGER RANGE 0 TO 200000000 := 0;
@@ -82,8 +73,7 @@ BEGIN
         LCD_RS      => LCD_RS,
         LCD_E       => LCD_E,
         LCD_DATA    => LCD_DATA,
-        spi_miso_data => spi_miso_data,
-        DEBUG => DEBUG
+        spi_miso_data => spi_miso_data
     );
 
 
@@ -92,12 +82,10 @@ BEGIN
     PORT MAP(
         clk => Clock100MHz,
         start => spi_start_pulse, -- Connect to the new pulse signal
-        data_in => spi_data_out, -- Connect data to be transmitted
         sck => SPI_SCK,
         ss => SPI_SS,
         busy => spi_busy,
-        miso => spi_miso_in,
-        data_out => data_received, -- Connect the data_out from spi_master
+        miso => SPI_MISO,
         miso_data_out => spi_miso_data -- Connect the 12-bit MISO data
     );
 

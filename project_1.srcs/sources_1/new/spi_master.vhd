@@ -6,12 +6,10 @@ ENTITY spi_master IS
     PORT (
         clk : IN STD_LOGIC;
         start : IN STD_LOGIC;
-        data_in : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
         sck : OUT STD_LOGIC;
         miso : IN STD_LOGIC;  -- Added MISO input
         ss : OUT STD_LOGIC;
         busy : OUT STD_LOGIC;
-        data_out : OUT STD_LOGIC_VECTOR(23 DOWNTO 0);
         miso_data_out : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
     );
 END spi_master;

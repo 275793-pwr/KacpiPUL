@@ -168,16 +168,12 @@ create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} -add [get_
 
 set_property IOSTANDARD LVCMOS33 [get_ports SPI_SS]
 set_property IOSTANDARD LVCMOS33 [get_ports SPI_SCK]
-set_property IOSTANDARD LVCMOS33 [get_ports SPI_MOSI]
-set_property PACKAGE_PIN N17 [get_ports SPI_MOSI]
-set_property PACKAGE_PIN P18 [get_ports SPI_SCK]
-set_property PACKAGE_PIN P17 [get_ports SPI_SS]
+set_property PACKAGE_PIN U18 [get_ports SPI_SCK]
+set_property PACKAGE_PIN R17 [get_ports SPI_SS]
 
 set_property PACKAGE_PIN R18 [get_ports LDAC]
 set_property IOSTANDARD LVCMOS33 [get_ports LDAC]
 
-set_property PACKAGE_PIN D9 [get_ports {BUTTON[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {BUTTON[0]}]
 
 set_property PACKAGE_PIN V16 [get_ports {LCD_DATA[0]}]
 set_property PACKAGE_PIN P14 [get_ports {LCD_DATA[1]}]
@@ -205,14 +201,7 @@ set_property PACKAGE_PIN T16 [get_ports {DEBUG[5]}]
 set_property PACKAGE_PIN P15 [get_ports {DEBUG[6]}]
 set_property PACKAGE_PIN R16 [get_ports {DEBUG[7]}]
 
-set_property IOSTANDARD LVCMOS33 [get_ports TRIG]
-set_property PACKAGE_PIN U18 [get_ports TRIG]
-set_property PACKAGE_PIN T18 [get_ports ECHO]
-set_property IOSTANDARD LVCMOS33 [get_ports ECHO]
 
-set_property PACKAGE_PIN C9 [get_ports {BUTTON[1]}]
-set_property PACKAGE_PIN B9 [get_ports {BUTTON[2]}]
-set_property PACKAGE_PIN B8 [get_ports {BUTTON[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {BUTTON[3]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {BUTTON[2]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {BUTTON[1]}]
+
+set_property PACKAGE_PIN T18 [get_ports SPI_MISO]
+set_property IOSTANDARD LVCMOS33 [get_ports SPI_MISO]
