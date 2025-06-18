@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1750200812" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/main.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1750235211" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/main.dcp">
   <File Type="VDS-TIMINGSUMMARY" Name="main_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="main.dcp"/>
   <File Type="RDS-UTIL-PB" Name="main_utilization_synth.pb"/>
@@ -25,20 +25,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/main.vhd">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/debouncer.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/us.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

@@ -8,8 +8,8 @@ ENTITY main IS
 
         LCD_RS : OUT STD_LOGIC;
         LCD_E : OUT STD_LOGIC;
-        LCD_DATA   : out STD_LOGIC_VECTOR (3 downto 0);
-      
+        LCD_DATA : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+
         Clock100MHz : IN STD_LOGIC;
         SPI_SCK : OUT STD_LOGIC;
         SPI_MISO : IN STD_LOGIC;
@@ -18,28 +18,26 @@ ENTITY main IS
 END main;
 
 ARCHITECTURE Behavioral OF main IS
+    SIGNAL lcd_reset : STD_LOGIC := '0';
 
-
-    signal lcd_reset    : std_logic := '0';
-    
-    component lcd
-        Port (
-            reset       : in  STD_LOGIC;
-            Clock100MHz  : in  STD_LOGIC;
-            LCD_RS      : out STD_LOGIC;
-            LCD_E       : out STD_LOGIC;
-            LCD_DATA    : out STD_LOGIC_VECTOR (3 downto 0);
-            spi_miso_data : in  STD_LOGIC_VECTOR(11 downto 0)
+    COMPONENT lcd
+        PORT (
+            reset : IN STD_LOGIC;
+            Clock100MHz : IN STD_LOGIC;
+            LCD_RS : OUT STD_LOGIC;
+            LCD_E : OUT STD_LOGIC;
+            LCD_DATA : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+            spi_miso_data : IN STD_LOGIC_VECTOR(11 DOWNTO 0)
         );
-    end component;
-    
-     COMPONENT spi_master IS
+    END COMPONENT;
+
+    COMPONENT spi_master IS
         PORT (
             clk : IN STD_LOGIC;
             start : IN STD_LOGIC;
             sck : OUT STD_LOGIC;
             -- mosi : OUT STD_LOGIC;
-            miso : IN STD_LOGIC;  -- Added MISO input to component declaration
+            miso : IN STD_LOGIC; -- Added MISO input to component declaration
             ss : OUT STD_LOGIC;
             busy : OUT STD_LOGIC;
             miso_data_out : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
@@ -64,20 +62,16 @@ ARCHITECTURE Behavioral OF main IS
     SIGNAL next_state : state_type := IDLE;
 
 BEGIN
-
-
-    U2: lcd
-    port map (
-        reset       => lcd_reset,
-        Clock100MHz  => Clock100MHz,
-        LCD_RS      => LCD_RS,
-        LCD_E       => LCD_E,
-        LCD_DATA    => LCD_DATA,
+    U2 : lcd
+    PORT MAP(
+        reset => lcd_reset,
+        Clock100MHz => Clock100MHz,
+        LCD_RS => LCD_RS,
+        LCD_E => LCD_E,
+        LCD_DATA => LCD_DATA,
         spi_miso_data => spi_miso_data
     );
-
-
- -- Instantiate SPI Master
+    -- Instantiate SPI Master
     spi_master_inst : spi_master
     PORT MAP(
         clk => Clock100MHz,
@@ -89,17 +83,18 @@ BEGIN
         miso_data_out => spi_miso_data -- Connect the 12-bit MISO data
     );
 
-    lcd_refresh : process( Clock100MHz )
-    begin
-        
-        IF lcd_clk_cnt > 100000000 THEN
-            lcd_reset <= '1';
-            lcd_clk_cnt <= 0;
-        ELSE
-            lcd_reset <= '0';
+    lcd_refresh : PROCESS (Clock100MHz)
+    BEGIN
+        IF rising_edge(Clock100MHz) THEN
+            IF lcd_clk_cnt > 100000000 THEN
+                lcd_reset <= '1';
+                lcd_clk_cnt <= 0;
+            ELSE
+                lcd_reset <= '0';
+            END IF;
+            lcd_clk_cnt <= lcd_clk_cnt + 1;
         END IF;
-        lcd_clk_cnt <= lcd_clk_cnt + 1;
-    end process ; -- lcd_refresh
+    END PROCESS; -- lcd_refresh
 
     -- State machine to send configuration commands and data
     PROCESS (Clock100MHz)
@@ -130,6 +125,4 @@ BEGIN
             current_state <= next_state;
         END IF;
     END PROCESS;
-
-
 END Behavioral;

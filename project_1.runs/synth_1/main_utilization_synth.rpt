@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Wed Jun 18 00:53:56 2025
+| Date         : Wed Jun 18 10:27:13 2025
 | Host         : temp-mati running 64-bit Linux Mint 22.1
 | Command      : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
 | Design       : main
@@ -34,8 +34,8 @@ Table of Contents
 | Slice LUTs*             |  134 |     0 |          0 |     20800 |  0.64 |
 |   LUT as Logic          |  134 |     0 |          0 |     20800 |  0.64 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         |  122 |     0 |          0 |     41600 |  0.29 |
-|   Register as Flip Flop |  122 |     0 |          0 |     41600 |  0.29 |
+| Slice Registers         |  151 |     0 |          0 |     41600 |  0.36 |
+|   Register as Flip Flop |  151 |     0 |          0 |     41600 |  0.36 |
 |   Register as Latch     |    0 |     0 |          0 |     41600 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |      8150 |  0.00 |
@@ -60,7 +60,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 4     |          Yes |           - |          Set |
 | 28    |          Yes |           - |        Reset |
 | 1     |          Yes |         Set |            - |
-| 89    |          Yes |       Reset |            - |
+| 118   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,14 +149,14 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |   89 |        Flop & Latch |
-| LUT2     |   55 |                 LUT |
-| LUT5     |   40 |                 LUT |
-| LUT6     |   30 |                 LUT |
+| FDRE     |  118 |        Flop & Latch |
+| LUT2     |   54 |                 LUT |
+| LUT5     |   36 |                 LUT |
+| LUT6     |   33 |                 LUT |
 | FDCE     |   28 |        Flop & Latch |
 | LUT4     |   23 |                 LUT |
 | CARRY4   |   20 |          CarryLogic |
-| LUT3     |   19 |                 LUT |
+| LUT3     |   17 |                 LUT |
 | OBUF     |    8 |                  IO |
 | LUT1     |    4 |                 LUT |
 | FDPE     |    4 |        Flop & Latch |

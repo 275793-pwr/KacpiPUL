@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Wed Jun 18 00:55:46 2025
+| Date         : Wed Jun 18 10:27:29 2025
 | Host         : temp-mati running 64-bit Linux Mint 22.1
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    29 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   150 |
+| Unused register locations in slices containing registers |   153 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              21 |            8 |
+| No           | No                    | No                     |              50 |           14 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              16 |            4 |
 | Yes          | No                    | No                     |              45 |           21 |
-| Yes          | No                    | Yes                    |              32 |           11 |
-| Yes          | Yes                   | No                     |               8 |            4 |
+| Yes          | No                    | Yes                    |              32 |           12 |
+| Yes          | Yes                   | No                     |               8 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,35 +73,35 @@ Table of Contents
 +------------------------+-----------------------------------+------------------------------------------------------+------------------+----------------+--------------+
 |      Clock Signal      |           Enable Signal           |                   Set/Reset Signal                   | Slice Load Count | Bel Load Count | Bels / Slice |
 +------------------------+-----------------------------------+------------------------------------------------------+------------------+----------------+--------------+
-|  clk_BUFG              | U2/LCD_RS_i_1_n_0                 | U2/lcd_reset                                         |                1 |              1 |         1.00 |
-|  clk_BUFG              |                                   |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[9]  |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[7]  |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[8]  |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[2]  |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[5]  |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[3]  |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[4]  |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[6]  |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[0]  |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[1]  |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[11] |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_2[10] |                                                      |                1 |              1 |         1.00 |
-|  clk_BUFG              | U2/LCD_E_i_1_n_0                  | U2/lcd_reset                                         |                1 |              1 |         1.00 |
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/spi_ss_int        |                                                      |                1 |              1 |         1.00 |
-|  clk_BUFG              | U2/line_no[1]_i_1_n_0             | U2/lcd_reset                                         |                1 |              2 |         2.00 |
-|  clk_BUFG              | U2/LCD_DATA0                      |                                                      |                1 |              4 |         4.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[4]  |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[5]  |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[6]  |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[9]  |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[7]  |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[1]  |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[2]  |                                                      |                1 |              1 |         1.00 |
+|  clk_BUFG              | U2/LCD_RS_i_1_n_0                 | reset                                                |                1 |              1 |         1.00 |
+|  clk_BUFG              |                                   |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[10] |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[11] |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[0]  |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[3]  |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer_1[8]  |                                                      |                1 |              1 |         1.00 |
+|  clk_BUFG              | U2/LCD_E_i_1_n_0                  | reset                                                |                1 |              1 |         1.00 |
+|  clk_BUFG              | U2/line_no[1]_i_1_n_0             | reset                                                |                1 |              2 |         2.00 |
+| ~clk_BUFG              | U2/znak[5]_i_1_n_0                | reset                                                |                2 |              4 |         2.00 |
 |  clk_BUFG              | U2/reset_cnt0                     |                                                      |                1 |              4 |         4.00 |
-| ~clk_BUFG              | U2/znak[5]_i_1_n_0                | U2/lcd_reset                                         |                1 |              4 |         4.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/bit_count         | spi_master_inst/FSM_onehot_current_state_reg_n_0_[3] |                2 |              4 |         2.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/p_0_in_0          | spi_master_inst/FSM_onehot_current_state_reg_n_0_[3] |                2 |              4 |         2.00 |
-|  clk_BUFG              | U2/state[4]_i_1_n_0               | U2/lcd_reset                                         |                2 |              5 |         2.50 |
-|  clk_BUFG              | U2/next_command[4]_i_1_n_0        | U2/lcd_reset                                         |                2 |              5 |         2.50 |
-|  clk_BUFG              | U2/char_no[5]_i_1_n_0             | U2/lcd_reset                                         |                2 |              6 |         3.00 |
-|  clk_BUFG              | U2/g0_b0_n_0                      | U2/lcd_reset                                         |                1 |              8 |         8.00 |
+|  clk_BUFG              | U2/LCD_DATA0                      |                                                      |                1 |              4 |         4.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/p_0_in_2          | spi_master_inst/FSM_onehot_current_state_reg_n_0_[3] |                2 |              4 |         2.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/bit_count         | spi_master_inst/FSM_onehot_current_state_reg_n_0_[3] |                1 |              4 |         4.00 |
+|  clk_BUFG              | U2/next_command[4]_i_1_n_0        | reset                                                |                1 |              5 |         5.00 |
+|  clk_BUFG              | U2/state[4]_i_1_n_0               | reset                                                |                2 |              5 |         2.50 |
+|  clk_BUFG              | U2/char_no[5]_i_1_n_0             | reset                                                |                2 |              6 |         3.00 |
+|  clk_BUFG              | U2/g0_b0_n_0                      | reset                                                |                2 |              8 |         4.00 |
 |  Clock100MHz_IBUF_BUFG |                                   | U2/lcd_clk_cnt[0]_i_1_n_0                            |                4 |             16 |         4.00 |
-|  Clock100MHz_IBUF_BUFG |                                   |                                                      |                7 |             20 |         2.86 |
 |  Clock100MHz_IBUF_BUFG | counter[0]_i_1_n_0                |                                                      |                6 |             24 |         4.00 |
+|  Clock100MHz_IBUF_BUFG |                                   |                                                      |               13 |             49 |         3.77 |
 +------------------------+-----------------------------------+------------------------------------------------------+------------------+----------------+--------------+
 
 
