@@ -1,0 +1,1482 @@
+ 2005-2016 Microchip Technology Inc. DS20001942G-page 1
+MCP9700/9700A
+MCP9701/9701A
+Features
+• Tiny Analog Temperature Sensor
+• Available Packages:
+- SC70-5, SOT-23-3, TO-92-3
+• Wide Temperature Measurement Range:
+- -40°C to +125°C (Extended Temperature)
+- -40°C to +150°C (High Temperature)
+(MCP9700, SOT-23-3 and SC70-5 only)
+• Accuracy:
+- ±2°C (max.), 0°C to +70°C (MCP9700A/9701A)
+- ±4°C (max.), 0°C to +70°C (MCP9700/9701)
+• Optimized for Analog-to-Digital Converters (ADCs):
+- 10.0 mV/°C (typical) (MCP9700/9700A)
+- 19.5 mV/°C (typical) (MCP9701/9701A)
+• Wide Operating Voltage Range:
+- VDD = 2.3V to 5.5V (MCP9700/9700A)
+- VDD = 3.1V to 5.5V (MCP9701/9701A)
+• Low Operating Current: 6 µA (typical)
+• Optimized to Drive Large Capacitive Loads
+Typical Applications
+• Hard Disk Drives and Other PC Peripherals
+• Entertainment Systems
+• Home Appliance
+• Office Equipment
+• Battery Packs and Portable Equipment
+• General Purpose Temperature Monitoring
+General Description
+MCP9700/9700A and MCP9701/9701A sensors with
+Linear Active Thermistor Integrated Circuit (IC) comprise a family of analog temperature sensors that
+convert temperature to analog voltage.
+The low-cost, low-power sensors feature an accuracy
+of ±2°C from 0°C to +70°C (MCP9700A/9701A) and
+±4°C from 0°C to +70°C (MCP9700/9701) while
+consuming 6 µA (typical) of operating current.
+Unlike resistive sensors, e.g., thermistors, the Linear
+Active Thermistor IC does not require an additional
+signal-conditioning circuit. Therefore, the biasing circuit
+development overhead for thermistor solutions can be
+avoided by implementing a sensor from these low-cost
+devices. The Voltage Output pin (VOUT) can be directly
+connected to the ADC input of a microcontroller. The
+MCP9700/9700A and MCP9701/9701A temperature
+coefficients are scaled to provide a 1°C/bit resolution
+for an 8-bit ADC with a reference voltage of 2.5V and
+5V, respectively. The MCP9700/9700A output 0.1°C/bit
+for a 12-bit ADC with 4.096V reference.
+The MCP9700/9700A and MCP9701/9701A provide a
+low-cost solution for applications that require measurement of a relative change of temperature. When measuring relative change in temperature from +25°C, an
+accuracy of ±1°C (typical) can be realized from 0°C to
++70°C. This accuracy can also be achieved by applying
+system calibration at +25°C.
+In addition, this family of devices is immune to the
+effects of parasitic capacitance and can drive large
+capacitive loads. This provides printed circuit board
+(PCB) layout design flexibility by enabling the device to
+be remotely located from the microcontroller. Adding
+some capacitance at the output also helps the output
+transient response by reducing overshoots or
+undershoots. However, capacitive load is not required
+for the stability of sensor output.
+Package Types
+3-Pin SOT-23
+MCP9700/9700A
+MCP9701/9701A
+3-Pin TO-92
+1 2 3
+VDD VOUT GND
+Bottom
+View
+MCP9700/9700A
+MCP9701/9701A
+1
+GND
+VOUT VDD
+NC
+4
+1
+2
+3
+5
+5-Pin SC70
+NC
+MCP9700/9700A
+MCP9701/9701A
+GND
+VDD VOUT
+3
+1 2
+Low-Power Linear Active Thermistor ICs
+MCP9700/9700A and MCP9701/9701A
+DS20001942G-page 2  2005-2016 Microchip Technology Inc.
+1.0 ELECTRICAL
+CHARACTERISTICS
+Absolute Maximum Ratings †
+VDD....................................................................... 6.0V
+Storage Temperature......................... -65°C to +150°C
+Ambient Temp. with Power Applied... -40°C to +150°C
+Output Current .................................................±30 mA
+Junction Temperature (TJ).................................. 150°C
+ESD Protection on All Pins (HBM:MM) ..... (4 kV:200V)
+Latch-Up Current at Each Pin ....................... ±200 mA
+† Notice: Stresses above those listed under “Maximum
+Ratings” may cause permanent damage to the device. This is
+a stress rating only and functional operation of the device at
+those or any other conditions above those indicated in the
+operational listings of this specification is not implied.
+Exposure to maximum rating conditions for extended periods
+may affect device reliability.
+DC ELECTRICAL CHARACTERISTICS
+Electrical Specifications: Unless otherwise indicated:
+MCP9700/9700A: VDD = 2.3V to 5.5V, GND = Ground, TA = -40°C to +125°C and No load
+MCP9701/9701A: VDD = 3.1V to 5.5V, GND = Ground, TA = -10°C to +125°C and No load
+Parameter Sym. Min. Typ. Max. Unit Conditions
+Power Supply
+Operating Voltage Range VDD
+VDD
+2.3
+3.1
+—
+—
+5.5
+5.5
+V
+V
+MCP9700/9700A
+MCP9701/9701A
+Operating Current IDD — 6 12 µA
+IDD — — 15 µA TA = 150°C (Note 1)
+Line Regulation °C/VDD — 0.1 — °C/V
+Sensor Accuracy (Notes 2, 3)
+TA = +25°C TACY — ±1 — °C
+TA = 0°C to +70°C TACY -2.0 ±1 +2.0 °C MCP9700A/9701A
+TA = -40°C to +125°C TACY -2.0 ±1 +4.0 °C MCP9700A
+TA = -10°C to +125°C TACY -2.0 ±1 +4.0 °C MCP9701A
+TA = 0°C to +70°C TACY -4.0 ±2 +4.0 °C MCP9700/9701
+TA = -40°C to +125°C TACY -4.0 ±2 +6.0 °C MCP9700
+TA = -10°C to +125°C TACY -4.0 ±2 +6.0 °C MCP9701
+TA = -40°C to +150°C TACY -4.0 ±2 +6.0 °C HighTemperature (Note 1)
+Sensor Output
+Output Voltage, TA = 0°C V0°C — 500 — mV MCP9700/9700A
+Output Voltage, TA = 0°C V0°C — 400 — mV MCP9701/9701A
+Temperature Coefficient TC — 10.0 — mV/°C MCP9700/9700A
+TC — 19.5 — mV/°C MCP9701/9701A
+Output Nonlinearity VONL — ±0.5 — °C TA = 0°C to +70°C (Note 3)
+Note 1: MCP9700 with SC70-5 and SOT-23-3 packages only. The MCP9700 High Temperature is not available
+with TO-92 package.
+2: The MCP9700/9700A family accuracy is tested with VDD = 3.3V, while the MCP9701/9701A accuracy is
+tested with VDD = 5.0V.
+3: The MCP9700/9700A and MCP9701/9701A family is characterized using the first-order or linear equation,
+as shown in Equation 4-2. Also refer to Figure 2-16.
+4: The MCP9700/9700A and MCP9701/9701A family is characterized and production tested with a
+capacitive load of 1000 pF.
+5: SC70-5 package thermal response with 1x1 inch, dual-sided copper clad, TO-92-3 package thermal
+response without PCB (leaded).
+ 2005-2016 Microchip Technology Inc. DS20001942G-page 3
+MCP9700/9700A and MCP9701/9701A
+Output Current IOUT — — 100 µA
+Output Impedance ZOUT — 20 —  IOUT = 100 µA, f = 500 Hz
+Output Load Regulation VOUT/
+IOUT
+—1—  TA = 0°C to +70°C
+IOUT = 100 µA
+Turn-On Time tON — 800 — µs
+Typical Load Capacitance CLOAD — — 1000 pF Note 4
+SC-70 Thermal Response to 63% tRES — 1.3 — s 30°C (Air) to +125°C
+(Fluid Bath) (Note 5) TO-92 Thermal Response to 63% tRES — 1.65 — s
+DC ELECTRICAL CHARACTERISTICS (CONTINUED)
+Electrical Specifications: Unless otherwise indicated:
+MCP9700/9700A: VDD = 2.3V to 5.5V, GND = Ground, TA = -40°C to +125°C and No load
+MCP9701/9701A: VDD = 3.1V to 5.5V, GND = Ground, TA = -10°C to +125°C and No load
+Parameter Sym. Min. Typ. Max. Unit Conditions
+Note 1: MCP9700 with SC70-5 and SOT-23-3 packages only. The MCP9700 High Temperature is not available
+with TO-92 package.
+2: The MCP9700/9700A family accuracy is tested with VDD = 3.3V, while the MCP9701/9701A accuracy is
+tested with VDD = 5.0V.
+3: The MCP9700/9700A and MCP9701/9701A family is characterized using the first-order or linear equation,
+as shown in Equation 4-2. Also refer to Figure 2-16.
+4: The MCP9700/9700A and MCP9701/9701A family is characterized and production tested with a
+capacitive load of 1000 pF.
+5: SC70-5 package thermal response with 1x1 inch, dual-sided copper clad, TO-92-3 package thermal
+response without PCB (leaded).
+TEMPERATURE CHARACTERISTICS
+Electrical Specifications: Unless otherwise indicated:
+MCP9700/9700A: VDD = 2.3V to 5.5V, GND = Ground, TA = -40°C to +125°C and No load
+MCP9701/9701A: VDD = 3.1V to 5.5V, GND = Ground, TA = -10°C to +125°C and No load
+Parameters Sym. Min. Typ. Max. Units Conditions
+Temperature Ranges
+Specified Temperature Range (Note 1) TA -40 — +125 °C MCP9700/9700A
+TA -10 — +125 °C MCP9701/9701A
+TA -40 — +150 °C High Temperature
+(MCP9700, SOT23-3
+and SC70-5 only)
+Operating Temperature Range TA -40 — +125 °C Extended Temperature
+TA -40 — +150 °C High Temperature
+Storage Temperature Range TA -65 — +150 °C
+Thermal Package Resistances
+Thermal Resistance, 5LD SC70 JA — 331 — °C/W
+Thermal Resistance, 3LD SOT-23 JA — 308 — °C/W
+Thermal Resistance, 3LD TO-92 JA — 146 — °C/W
+Note 1: Operation in this range must not cause TJ to exceed Maximum Junction Temperature (+150°C).
+MCP9700/9700A and MCP9701/9701A
+DS20001942G-page 4  2005-2016 Microchip Technology Inc.
+2.0 TYPICAL PERFORMANCE CURVES
+Note: Unless otherwise indicated, MCP9700/9700A: VDD = 2.3V to 5.5V; MCP9701/9701A: VDD = 3.1V to 5.5V;
+GND = Ground, Cbypass = 0.1 µF.
+FIGURE 2-1: Accuracy vs. Ambient
+Temperature (MCP9700A/9701A).
+FIGURE 2-2: Accuracy vs. Ambient
+Temperature, with VDD.
+FIGURE 2-3: Supply Current vs.
+Temperature.
+FIGURE 2-4: Accuracy vs. Ambient
+Temperature (MCP9700/9701).
+FIGURE 2-5: Changes in Accuracy vs.
+Ambient Temperature (Due to Load).
+FIGURE 2-6: Load Regulation vs.
+Ambient Temperature.
+Note: The graphs and tables provided following this note are a statistical summary based on a limited number of
+samples and are provided for informational purposes only. The performance characteristics listed herein
+are not tested or guaranteed. In some graphs or tables, the data presented may be outside the specified
+operating range (e.g., outside specified power supply range) and therefore outside the warranted range.
+-2.0
+-1.0
+0.0
+1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+-50 -25 0 25 50 75 100 125 150
+Accuracy (°C)
+TA (°C)
+MCP9700A VDD = 3.3V
+MCP9701A
+VDD = 5.0V
+Spec. Limits
+-4.0
+-2.0
+0.0
+2.0
+4.0
+6.0
+-50 -25 0 25 50 75 100 125 150
+Accuracy (°C)
+TA (°C)
+MCP9701/
+MCP9701A
+VDD = 5.5V
+VDD = 3.1V
+MCP9700
+MCP9700A
+VDD = 5.5V
+VDD = 2.3V
+0.0
+2.0
+4.0
+6.0
+8.0
+10.0
+12.0
+-50 -25 0 25 50 75 100 125 150
+TA (°C)
+IDD (µA)
+MCP9700/MCP9700A
+MCP9701
+MCP9701A
+-4.0
+-2.0
+0.0
+2.0
+4.0
+6.0
+-50 -25 0 25 50 75 100 125 150
+Accuracy (°C)
+TA (°C)
+MCP9700
+VDD = 3.3V
+MCP9701
+VDD = 5.0V Spec. Limits
+-0.2
+-0.1
+0
+0.1
+0.2
+-50 -25 0 25 50 75 100 125 150
+TA (°C)
+∆ Accuracy Due to Load
+(°C)
+MCP9701/MCP9701A
+VDD = 5.0V ILOAD = 100 µA
+MCP9700/MCP9700A
+ VDD = 3.3V
+0.0
+1.0
+2.0
+3.0
+4.0
+-50 -25 0 25 50 75 100 125
+TA (°C)
+Load Regulation
+∆V/∆I (
+Ω)
+MCP9700/MCP9700A
+MCP9701/MCP9701A
+VDD = 3.3V
+IOUT = 50 µA
+IOUT = 100 µA
+IOUT = 200 µA
+ 2005-2016 Microchip Technology Inc. DS20001942G-page 5
+MCP9700/9700A and MCP9701/9701A
+Note: Unless otherwise indicated, MCP9700/9700A: VDD = 2.3V to 5.5V; MCP9701/9701A: VDD = 3.1V to 5.5V;
+GND = Ground, Cbypass = 0.1 µF.
+FIGURE 2-7: Output Voltage at 0°C
+(MCP9700/9700A).
+FIGURE 2-8: Occurrences vs.
+Temperature Coefficient (MCP9700/9700A).
+FIGURE 2-9: Line Regulation (°C/VDD)
+vs. Ambient Temperature.
+FIGURE 2-10: Output Voltage at 0°C
+(MCP9701/9701A).
+FIGURE 2-11: Occurrences vs.
+Temperature Coefficient (MCP9701/9701A).
+FIGURE 2-12: Line Regulation (°C/VDD)
+vs. Ambient Temperature.
+0%
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+400
+420
+440
+460
+480
+500
+520
+540
+560
+580
+600
+V0°C (mV)
+Occurrences
+VDD = 3.3V
+108 samples
+MCP9700A
+MCP9700
+0%
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+40%
+45%
+9.7
+9.8
+9.8
+9.9
+10.0
+10.1
+10.2
+10.2
+10.3
+10.4
+10.5
+TC (mV/°C)
+Occurrences
+MCP9700
+MCP9700A
+VDD = 3.3V
+108 samples
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+-50 -25 0 25 50 75 100 125 150
+Normalized Line Regulation
+(ǻ°C/
+ǻ
+VDD)
+TA (°C)
+MCP9700/MCP9700A
+VDD = 2.3V to 5.5V
+MCP9700/MCP9700A
+VDD = 2.3V to 4.0V
+0%
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+300
+320
+340
+360
+380
+400
+420
+440
+460
+480
+500
+V0°C (mV)
+Occurrences
+MCP9701
+VDD = 5.0V
+108 samples
+MCP9701A
+MCP9701
+0%
+5%
+10%
+15%
+20%
+25%
+30%
+35%
+40%
+45%
+19.2
+19.3
+19.3
+19.4
+19.5
+19.6
+19.7
+19.7
+19.8
+19.9
+20.0
+TC (mV/°C)
+Occurrences
+MCP9701
+MCP9701A
+VDD = 5.0V
+108 samples
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+-50 -25 0 25 50 75 100 125
+Normalized Line Regulation
+(ǻ°C/
+ǻ
+VDD)
+TA (°C)
+MCP9701/MCP9701A
+VDD = 3.1V to 5.5V
+MCP9701/MCP9701A
+VDD = 3.1V to 4.0V
+MCP9700/9700A and MCP9701/9701A
+DS20001942G-page 6  2005-2016 Microchip Technology Inc.
+Note: Unless otherwise indicated, MCP9700/9700A: VDD = 2.3V to 5.5V; MCP9701/9701A: VDD = 3.1V to 5.5V;
+GND = Ground, Cbypass = 0.1 µF.
+FIGURE 2-13: Output Voltage vs. Power
+Supply.
+FIGURE 2-14: Output vs. Settling Time to
+Step VDD.
+FIGURE 2-15: Thermal Response
+(Air-to-Fluid Bath).
+FIGURE 2-16: Output Voltage vs. Ambient
+Temperature.
+FIGURE 2-17: Output vs. Settling Time to
+Ramp VDD.
+FIGURE 2-18: Output Impedance vs.
+Frequency.
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+0.0 0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5
+VDD (V)
+VOUT (V)
+TA = +26°C
+0
+2
+4
+6
+8
+10
+12
+-0.1
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+Time (ms)
+VOUT (V)
+-2.5
+-1.7
+-0.8
+0.0
+0.8
+1.7
+2.5
+IDD (mA)
+VDD_STEP = 5V
+TA = 26°C
+IDD
+VOUT
+30
+55
+80
+105
+130
+-2 0 2 4 6 8 10 12 14 16 18
+Time (s)
+TA (°C)
+SC70-5
+1 in. x 1 in. Copper Clad PCB
+Leaded, without PCB
+SC70-5
+SOT-23-3
+TO-92-3
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+-50 -25 0 25 50 75 100 125
+TA (°C)
+VOUT (V)
+MCP9700
+MCP9700A
+MCP9701
+MCP9701A
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+Time (ms)
+VOUT (V)
+-42.0
+-30.0
+-18.0
+-6.0
+6.0
+18.0
+30.0
+IDD (µA)
+IDD
+VOUT
+VDD_RAMP = 5V/ms
+TA = +26°C
+1
+10
+100
+1000
+0.1 1 10 100 1000 10000 100000
+Frequency (Hz)
+Output Impedance (
+Ω)
+VDD = 5.0V
+IOUT = 100 µA
+TA = +26°C
+0. 1 10 100 1k 10k 100k
+ 2005-2016 Microchip Technology Inc. DS20001942G-page 7
+MCP9700/9700A and MCP9701/9701A
+3.0 PIN DESCRIPTIONS
+The descriptions of the pins are listed in Table 3-1.
+TABLE 3-1: PIN FUNCTION TABLE
+3.1 Power Ground Pin (GND)
+GND is the system ground pin.
+3.2 Output Voltage Pin (VOUT)
+The sensor output can be measured at VOUT. The
+voltage range over the operating temperature range for
+the MCP9700/9700A is 100 mV to 1.75V. The voltage
+range over the operating temperature range for the
+MCP9701/9701A is 200 mV to 3V.
+3.3 Power Supply Input (VDD)
+The operating voltage as specified in the DC Electrical
+Characteristics table is applied to VDD.
+3.4 No Connect Pin (NC)
+This pin is not connected to the die. It can be used to
+improve thermal conduction to the package by
+connecting it to a printed circuit board (PCB) trace from
+the thermal source.
+Pin No.
+SC70
+Pin No.
+SOT-23
+Pin No.
+TO-92 Symbol Function
+1 — — NC No Connect (this pin is not connected to the die.)
+2 3 3 GND Power Ground Pin
+3 2 2VOUT Output Voltage Pin
+4 1 1VDD Power Supply Input
+5 — — NC No Connect (this pin is not connected to the die.)
+MCP9700/9700A and MCP9701/9701A
+DS20001942G-page 8  2005-2016 Microchip Technology Inc.
+4.0 APPLICATIONS INFORMATION
+The Linear Active Thermistor™ IC uses an internal
+diode to measure temperature. The diode electrical
+characteristics have a temperature coefficient that
+provides a change in voltage based on the relative
+ambient temperature from -40°C to 150°C. The change
+in voltage is scaled to a temperature coefficient of
+10.0 mV/°C (typical) for the MCP9700/9700A and
+19.5 mV/°C (typical) for the MCP9701/9701A. The
+output voltage at 0°C is also scaled to 500 mV (typical)
+and 400 mV (typical) for the MCP9700/9700A and
+MCP9701/9701A, respectively. This linear scale is
+described in the first-order transfer function shown in
+Equation 4-1 and Figure 2-16.
+EQUATION 4-1: SENSOR TRANSFER
+FUNCTION
+FIGURE 4-1: Typical Application Circuit.
+4.1 Improving Accuracy
+The MCP9700/9700A and MCP9701/9701A accuracy
+can be improved by performing a system calibration at
+a specific temperature. For example, calibrating the
+system at +25°C ambient improves the measurement
+accuracy to a ±0.5°C (typical) from 0°C to +70°C, as
+shown in Figure 4-2. Therefore, when measuring
+relative temperature change, this family of devices
+measures temperature with higher accuracy.
+FIGURE 4-2: Relative Accuracy to +25°C
+vs. Temperature.
+The change in accuracy from the calibration temperature is due to the output nonlinearity from the first-order
+equation, as specified in Equation 4-2. The accuracy
+can be further improved by compensating for the output
+nonlinearity.
+For higher accuracy using a sensor compensation
+technique, refer to Application Note AN1001,
+“IC Temperature Sensor Accuracy Compensation with
+a PIC® Microcontroller” (DS00001001). The application
+note shows that if the device is compensated in
+addition to room temperature calibration, the sensor
+accuracy can be improved to ±0.5°C (typical) accuracy
+over the operating temperature (Figure 4-3).
+FIGURE 4-3: MCP9700/9700A Calibrated
+Sensor Accuracy.
+The compensation technique provides a linear
+temperature reading. The application note includes
+compensation firmware so that a look-up table can be
+generated to compensate for the sensor error.
+Where:
+TA = Ambient Temperature
+VOUT = Sensor Output Voltage
+V0°C = Sensor Output Voltage at 0°C
+(see DC Electrical Characteristics
+table)
+TC = Temperature Coefficient
+(see DC Electrical Characteristics
+table)
+VOUT TC TA  V0°C = +
+VDD
+GND
+GND
+ANI
+VDD
+GND
+VOUT
+MCP9700 PIC®
+MCU
+-3.0
+-2.0
+-1.0
+0.0
+1.0
+2.0
+3.0
+-50 -25 0 25 50 75 100 125
+TA (°C)
+Accuracy (°C)
+VDD= 3.3V
+10 Samples
+-4.0
+-2.0
+0.0
+2.0
+4.0
+6.0
+-50 -25 0 25 50 75 100 125
+Temperature (°C)
+Accuracy (°C)
++ s
+Average
+- s
+Spec. Limits
+100 Samples
+ 2005-2016 Microchip Technology Inc. DS20001942G-page 9
+MCP9700/9700A and MCP9701/9701A
+4.2 Shutdown Using Microcontroller
+I/O Pin
+The 6 µA (typical) low operating current of the
+MCP9700/9700A and MCP9701/9701A family makes it
+ideal for battery-powered applications. However, for
+applications that require a tighter current budget, this
+device can be powered using a microcontroller
+Input/Output (I/O) pin. The I/O pin can be toggled to
+shut down the device. In such applications, the microcontroller internal digital switching noise is emitted to
+the MCP9700/9700A and MCP9701/9701A as power
+supply noise. However, this switching noise compromises measurement accuracy, therefore a decoupling
+capacitor and series resistor will be necessary to filter
+out the system noise.
+4.3 Layout Considerations
+The MCP9700/9700A and MCP9701/9701A family of
+sensors does not require any additional components to
+operate. However, it is recommended that a decoupling
+capacitor of 0.1 µF to 1 µF be used between the
+VDD and GND pins. In high-noise applications, connect
+the power supply voltage to the VDD pin using a
+200 resistor with a 1 µF decoupling capacitor. A high
+frequency ceramic capacitor is recommended. It is necessary that the capacitor is located as close as possible
+to the VDD and GND pins in order to provide effective
+noise protection. In addition, avoid tracing digital lines
+in close proximity to the sensor.
+4.4 Thermal Considerations
+The MCP9700/9700A and MCP9701/9701A family
+measures temperature by monitoring the voltage of a
+diode located in the die. A low-impedance thermal path
+between the die and the PCB is provided by the pins.
+Therefore, the sensor effectively monitors the
+temperature of the PCB. However, the thermal path for
+the ambient air is not as efficient because the plastic
+device package functions as a thermal insulator from
+the die. This limitation applies to plastic-packaged
+silicon temperature sensors. If the application requires
+the measurement of ambient air, the TO-92 package
+should be considered.
+The MCP9700/9700A and MCP9701/9701A sensors
+are designed to source/sink 100 µA (max.). The power
+dissipation due to the output current is relatively
+insignificant. The effect of the output current can be
+described by Equation 4-2.
+EQUATION 4-2: EFFECT OF
+SELF-HEATING
+At TA = +25°C (VOUT = 0.75V) and maximum
+specification of IDD = 12 µA, VDD = 5.5V and
+IOUT = +100 µA, the self-heating due to power
+dissipation (TJ – TA) is 0.179°C.
+TJ TA – JA VDDIDD VDD VOUT +   – IOUT =  
+Where:
+TJ = Junction Temperature
+TA = Ambient Temperature
+JA = Package Thermal Resistance (331°C/W)
+VOUT = Sensor Output Voltage
+IOUT = Sensor Output Current
+IDD = Operating Current
+VDD = Operating Voltage
+MCP9700/9700A and MCP9701/9701A
+DS20001942G-page 10  2005-2016 Microchip Technology Inc.
+5.0 PACKAGING INFORMATION
+5.1 Package Marking Information
+5-Lead SC70 Example
+XXNN
+Device Code
+MCP9700T-E/LT AUNN
+MCP9700AT-E/LT AXNN
+MCP9700T-H/LT BCNN
+MCP9701T-E/LT AVNN
+MCP9701AT-E/LT AYNN
+Note: Applies to 5-Lead SC70.
+BC25
+3-Lead TO-92
+3-Lead SOT-23 Example
+Device Code
+MCP9700T-E/TT AENN
+MCP9700AT-E/TT AFNN
+MCP9700T-H/TT AGNN
+MCP9701T-E/TT AMNN
+MCP9701AT-E/TT APNN
+Note: Applies to 3-Lead SOT-23.
+XXNN AE25
+Legend: XX...X Customer-specific information
+Y Year code (last digit of calendar year)
+YY Year code (last 2 digits of calendar year)
+WW Week code (week of January 1 is week ‘01’)
+NNN Alphanumeric traceability code
+ Pb-free JEDEC® designator for Matte Tin (Sn)
+* This package is Pb-free. The Pb-free JEDEC designator ( )
+can be found on the outer packaging for this package.
+Note: In the event the full Microchip part number cannot be marked on one line, it will
+be carried over to the next line, thus limiting the number of available
+characters for customer-specific information.
+e3
+e3
+XXXXXX
+XXXXXX
+XXXXXX
+YWWNNN
+Example
+MCP
+9700E
+TO
+614256
+e3
+Device
+MCP9700-E/TO
+MCP9700A-E/TO
+MCP9701-E/TO
+MCP9701A-E/TO
+Note: Applies to 3-Lead TO-92.
+ 2005-2016 Microchip Technology Inc. DS20001942G-page 11
+MCP9700/9700A and MCP9701/9701A
+	
+
+
+
+
+
+  
+ !"!
+
+#$!
+!% 
+		
+#	$ 
+ 
+!% 
+		
+#	$ 
+  
+#&!	 !
+  
+!#
+		"'(
+)*+ )  
+
+	#&#,$ 
+--#
+$##
+	 
+ .
+	#
+ #$		#/!	- 0  #	
+1/%#
+
+#!#
+##+22---	
+
+2/
+3# 44""
+ 
+4# 5 56 7
+5$8	
+%1 5 (
+1#  9()*
+6,	:#  ; < 
+
+!!1//  ; < 
+#!
+%%   < 
+6,	=!# " ;  
+
+!!1/=!# " ( ( (
+6,	4#  ;  (
+.
+
+#4# 4   9
+4!/  ; < 9
+4!=!# 8 ( < 
+D
+b
+3 2 1
+E1
+E
+4 5
+e e
+c
+L
+A1
+A A2
+	
+ 
+
+ 	- *9)
+MCP9700/9700A and MCP9701/9701A
+DS20001942G-page 12  2005-2016 Microchip Technology Inc.
+ .
+	#
+ #$		#/!	- 0  #	
+1/%#
+
+#!#
+##+22---	
+
+2/
+ 2005-2016 Microchip Technology Inc. DS20001942G-page 13
+MCP9700/9700A and MCP9701/9701A
+!	
+
+
+
+"!
+
+  
+ !"!
+
+#$!
+!% 
+		
+#	$ 
+ 
+!% 
+		
+#	$ 
+  
+#&!(	 !
+  
+!#
+		"'(
+)*+ )  
+
+	#&#,$ 
+--#
+$##
+	 
+ .
+	#
+ #$		#/!	- 0  #	
+1/%#
+
+#!#
+##+22---	
+
+2/
+3# 44""
+ 
+4# 5 56 7
+5$8	
+%1 5 
+4!1#  ()*
+6$# !4!1#  )*
+6,	:#  ; < 
+
+!!1//   ( 
+#!
+%%   < 
+6,	=!# "  < 9
+
+!!1/=!# " 9  
+6,	4#  9  (
+.
+
+#4# 4  ( 9
+.
+
+#  > < >
+4!/  ; < 
+4!=!# 8  < (
+b
+N
+E
+E1
+1 2
+e
+e1
+D
+A
+A1
+A2
+c
+L
+φ
+	
+ 
+
+ 	- *)
+MCP9700/9700A and MCP9701/9701A
+DS20001942G-page 14  2005-2016 Microchip Technology Inc.
+Note: For the most current package drawings, please see the Microchip Packaging Specification located at
+http://www.microchip.com/packaging
+ 2005-2016 Microchip Technology Inc. DS20001942G-page 15
+MCP9700/9700A and MCP9701/9701A
+!	
+
+#"
+
+  
+ !"!
+
+#$!
+!% 
+		
+#	$ 
+ 
+!% 
+		
+#	$ 
+  
+#&!(?	 !
+  
+!#
+		"'(
+)*+ )  
+
+	#&#,$ 
+--#
+$##
+	 
+ .
+	#
+ #$		#/!	- 0  #	
+1/%#
+
+#!#
+##+22---	
+
+2/
+3# 5*:"
+ 
+4# 5 7
+5$8	
+%1 5 
+1#  ()*
+)
+##
+#
+1/.#  ( 9(
+6,	=!# " ( (
+6,	4#   
+
+!!1/!$  ; (
+#
+#1 4 ( <
+4!/   
+4!=!# 8  
+E
+A
+1 N
+L
+b
+e
+c
+R
+D
+1 2 3
+	
+ 
+
+ 	- *)
+MCP9700/9700A and MCP9701/9701A
+DS20001942G-page 16  2005-2016 Microchip Technology Inc.
+NOTES:
+ 2005-2016 Microchip Technology Inc. DS20001942G-page 17
+MCP9700/9700A and MCP9701/9701A
+APPENDIX A: REVISION HISTORY
+Revision G (June 2016)
+The following is the list of modifications:
+1. Added the MCP9700T-H/TT package version.
+2. Minor typographical changes.
+Revision F (July 2014)
+The following is the list of modifications:
+3. Updated the Package Type information.
+4. Note 4 in the DC Electrical Characteristics table
+was added.
+5. Updated the Temperature Range in the Product
+Identification System section.
+6. Added maximum IDD specification for the High
+Temperature device.
+Revision E (April 2009)
+The following is the list of modifications:
+1. Added High Temperature option throughout
+document.
+2. Updated plots to reflect the high temperature
+performance.
+3. Updated Package Outline drawings.
+4. Updated Revision history.
+Revision D (October 2007)
+The following is the list of modifications:
+1. Added the 3-lead SOT-23 devices to data sheet.
+2. Replaced Figure 2-15.
+3. Updated Package Outline Drawings.
+Revision C (June 2006)
+The following is the list of modifications:
+1. Added the MCP9700A and MCP9701A devices
+to data sheet.
+2. Added TO92 package for the
+MCP9700/MCP9701.
+Revision B (October 2005)
+The following is the list of modifications:
+1. Added Section 3.0 “Pin Descriptions”.
+2. Added the Linear Active Thermistor™ IC
+trademark.
+3. Removed the 2nd order temperature equation
+and the temperature coeficient histogram.
+4. Added a reference to AN1001 and corresponding verbiage.
+5. Added Figure 4-2 and corresponding verbiage.
+Revision A (November 2005)
+• Original release of this document.
+MCP9700/9700A and MCP9701/9701A
+DS20001942G-page 18  2005-2016 Microchip Technology Inc.
+NOTES:
+ 2005-2016 Microchip Technology Inc. DS20001942G-page 19
+MCP9700/9700A and MCP9701/9701A
+PRODUCT IDENTIFICATION SYSTEM
+To order or obtain information, e.g., on pricing or delivery, refer to the factory or the listed sales office.
+Device: MCP9700: Linear Active Thermistor™ IC
+MCP9700A: Linear Active Thermistor™ IC
+MCP9701: Linear Active Thermistor™ IC
+MCP9701A: Linear Active Thermistor™ IC
+Tape and Reel: T = Tape and Reel (1)
+Blank = Tube
+Temperature Range: E = -40C to +125C (Extended Temperature)
+H = -40C to +150C (High Temperature)
+(MCP9700, SOT-23-3 and SC70-5 only)
+Package: LT = Plastic Small Outline Transistor, 5-lead
+TO = Plastic Transistor Outline, 3-lead
+TT = Plastic Small Outline Transistor, 3-lead
+PART NO. X /XX
+Temperature Package
+Range
+Device
+Examples:
+a) MCP9700T-E/LT: Linear Active Thermistor IC
+Tape and Reel
+Extended temperature
+5LD SC70 package
+b) MCP9700-E/TO: Linear Active Thermistor IC
+Extended temperature
+3LD TO-92 package
+c) MCP9700T-E/TT: Linear Active Thermistor IC
+Tape and Reel
+Extended temperature
+3LD SOT-23 package
+d) MCP9700T-H/LT: Linear Active Thermistor IC
+Tape and Reel
+High temperature
+5LD SC70 package
+a) MCP9700AT-E/LT: Linear Active Thermistor IC
+Tape and Reel
+Extended temperature
+5LD SC70 package
+b) MCP9700A-E/TO: Linear Active Thermistor IC
+Extended temperature
+3LD TO-92 package
+c) MCP9700AT-E/TT: Linear Active Thermistor IC
+Tape and Reel
+Extended temperature
+3LD SOT-23 package
+a) MCP9701T-E/LT: Linear Active Thermistor IC
+Tape and Reel
+Extended temperature
+5LD SC70 package
+b) MCP9701-E/TO: Linear Active Thermistor IC
+Extended temperature
+3LD TO-92 package
+c) MCP9701T-E/TT: Linear Active Thermistor IC
+Tape and Reel
+Extended temperature
+3LD SOT-23 package
+a) MCP9701AT-E/LT: Linear Active Thermistor IC
+Tape and Reel
+Extended temperature
+5LD SC70 package
+b) MCP9701A-E/TO: Linear Active Thermistor IC
+Extended temperature
+3LD TO-92 package
+c) MCP9701AT-E/TT: Linear Active Thermistor IC
+Tape and Reel
+Extended Temperature
+3LD SOT-23 package
+a) MCP9700T-H/TT: Linear Active Thermistor IC
+Tape and Reel
+High Temperature
+3LD SOT-23 package
+b) MCP9700T-H/LT: Linear Active Thermistor IC
+Tape and Reel
+High Temperature
+5LD SC70 package
+X – (1)
+Tape and Reel
+Option
+Note 1: Tape and Reel identifier only appears in the
+catalog part number description. This
+identifier is used for ordering purposes and is
+not printed on the device package. Check
+with your Microchip Sales Office for package
+availability with the Tape and Reel option.
+MCP9700/9700A and MCP9701/9701A
+DS20001942G-page 20  2005-2016 Microchip Technology Inc.
+NOTES:
+ 2005-2016 Microchip Technology Inc. DS20001942G-page 21
+Information contained in this publication regarding device
+applications and the like is provided only for your convenience
+and may be superseded by updates. It is your responsibility to
+ensure that your application meets with your specifications.
+MICROCHIP MAKES NO REPRESENTATIONS OR
+WARRANTIES OF ANY KIND WHETHER EXPRESS OR
+IMPLIED, WRITTEN OR ORAL, STATUTORY OR
+OTHERWISE, RELATED TO THE INFORMATION,
+INCLUDING BUT NOT LIMITED TO ITS CONDITION,
+QUALITY, PERFORMANCE, MERCHANTABILITY OR
+FITNESS FOR PURPOSE. Microchip disclaims all liability
+arising from this information and its use. Use of Microchip
+devices in life support and/or safety applications is entirely at
+the buyer’s risk, and the buyer agrees to defend, indemnify and
+hold harmless Microchip from any and all damages, claims,
+suits, or expenses resulting from such use. No licenses are
+conveyed, implicitly or otherwise, under any Microchip
+intellectual property rights unless otherwise stated.
+Trademarks
+The Microchip name and logo, the Microchip logo, AnyRate,
+dsPIC, FlashFlex, flexPWR, Heldo, JukeBlox, KeeLoq,
+KeeLoq logo, Kleer, LANCheck, LINK MD, MediaLB, MOST,
+MOST logo, MPLAB, OptoLyzer, PIC, PICSTART, PIC32 logo,
+RightTouch, SpyNIC, SST, SST Logo, SuperFlash and UNI/O
+are registered trademarks of Microchip Technology
+Incorporated in the U.S.A. and other countries.
+ClockWorks, The Embedded Control Solutions Company,
+ETHERSYNCH, Hyper Speed Control, HyperLight Load,
+IntelliMOS, mTouch, Precision Edge, and QUIET-WIRE are
+registered trademarks of Microchip Technology Incorporated
+in the U.S.A.
+Analog-for-the-Digital Age, Any Capacitor, AnyIn, AnyOut,
+BodyCom, chipKIT, chipKIT logo, CodeGuard, dsPICDEM,
+dsPICDEM.net, Dynamic Average Matching, DAM, ECAN,
+EtherGREEN, In-Circuit Serial Programming, ICSP, Inter-Chip
+Connectivity, JitterBlocker, KleerNet, KleerNet logo, MiWi,
+motorBench, MPASM, MPF, MPLAB Certified logo, MPLIB,
+MPLINK, MultiTRAK, NetDetach, Omniscient Code
+Generation, PICDEM, PICDEM.net, PICkit, PICtail,
+PureSilicon, RightTouch logo, REAL ICE, Ripple Blocker,
+Serial Quad I/O, SQI, SuperSwitcher, SuperSwitcher II, Total
+Endurance, TSHARC, USBCheck, VariSense, ViewSpan,
+WiperLock, Wireless DNA, and ZENA are trademarks of
+Microchip Technology Incorporated in the U.S.A. and other
+countries.
+SQTP is a service mark of Microchip Technology Incorporated
+in the U.S.A.
+Silicon Storage Technology is a registered trademark of
+Microchip Technology Inc. in other countries.
+GestIC is a registered trademarks of Microchip Technology
+Germany II GmbH & Co. KG, a subsidiary of Microchip
+Technology Inc., in other countries.
+All other trademarks mentioned herein are property of their
+respective companies.
+© 2005-2016, Microchip Technology Incorporated, Printed in
+the U.S.A., All Rights Reserved.
+ISBN: 978-1-5224-0666-2
+Note the following details of the code protection feature on Microchip devices:
+• Microchip products meet the specification contained in their particular Microchip Data Sheet.
+• Microchip believes that its family of products is one of the most secure families of its kind on the market today, when used in the
+intended manner and under normal conditions.
+• There are dishonest and possibly illegal methods used to breach the code protection feature. All of these methods, to our
+knowledge, require using the Microchip products in a manner outside the operating specifications contained in Microchip’s Data
+Sheets. Most likely, the person doing so is engaged in theft of intellectual property.
+• Microchip is willing to work with the customer who is concerned about the integrity of their code.
+• Neither Microchip nor any other semiconductor manufacturer can guarantee the security of their code. Code protection does not
+mean that we are guaranteeing the product as “unbreakable.”
+Code protection is constantly evolving. We at Microchip are committed to continuously improving the code protection features of our
+products. Attempts to break Microchip’s code protection feature may be a violation of the Digital Millennium Copyright Act. If such acts
+allow unauthorized access to your software or other copyrighted work, you may have a right to sue for relief under that Act.
+Microchip received ISO/TS-16949:2009 certification for its worldwide
+headquarters, design and wafer fabrication facilities in Chandler and
+Tempe, Arizona; Gresham, Oregon and design centers in California
+and India. The Company’s quality system processes and procedures
+are for its PIC® MCUs and dsPIC® DSCs, KEELOQ® code hopping
+devices, Serial EEPROMs, microperipherals, nonvolatile memory and
+analog products. In addition, Microchip’s quality system for the design
+and manufacture of development systems is ISO 9001:2000 certified.
+QUALITY MANAGEMENT SYSTEM
+CERTIFIED BY DNV
+== ISO/TS 16949 ==
+DS20001942G-page 22  2005-2016 Microchip Technology Inc.
+AMERICAS
+Corporate Office
+2355 West Chandler Blvd.
+Chandler, AZ 85224-6199
+Tel: 480-792-7200
+Fax: 480-792-7277
+Technical Support:
+http://www.microchip.com/
+support
+Web Address:
+www.microchip.com
+Atlanta
+Duluth, GA
+Tel: 678-957-9614
+Fax: 678-957-1455
+Austin, TX
+Tel: 512-257-3370
+Boston
+Westborough, MA
+Tel: 774-760-0087
+Fax: 774-760-0088
+Chicago
+Itasca, IL
+Tel: 630-285-0071
+Fax: 630-285-0075
+Cleveland
+Independence, OH
+Tel: 216-447-0464
+Fax: 216-447-0643
+Dallas
+Addison, TX
+Tel: 972-818-7423
+Fax: 972-818-2924
+Detroit
+Novi, MI
+Tel: 248-848-4000
+Houston, TX
+Tel: 281-894-5983
+Indianapolis
+Noblesville, IN
+Tel: 317-773-8323
+Fax: 317-773-5453
+Los Angeles
+Mission Viejo, CA
+Tel: 949-462-9523
+Fax: 949-462-9608
+New York, NY
+Tel: 631-435-6000
+San Jose, CA
+Tel: 408-735-9110
+Canada - Toronto
+Tel: 905-673-0699
+Fax: 905-673-6509
+ASIA/PACIFIC
+Asia Pacific Office
+Suites 3707-14, 37th Floor
+Tower 6, The Gateway
+Harbour City, Kowloon
+Hong Kong
+Tel: 852-2943-5100
+Fax: 852-2401-3431
+Australia - Sydney
+Tel: 61-2-9868-6733
+Fax: 61-2-9868-6755
+China - Beijing
+Tel: 86-10-8569-7000
+Fax: 86-10-8528-2104
+China - Chengdu
+Tel: 86-28-8665-5511
+Fax: 86-28-8665-7889
+China - Chongqing
+Tel: 86-23-8980-9588
+Fax: 86-23-8980-9500
+China - Dongguan
+Tel: 86-769-8702-9880
+China - Hangzhou
+Tel: 86-571-8792-8115
+Fax: 86-571-8792-8116
+China - Hong Kong SAR
+Tel: 852-2943-5100
+Fax: 852-2401-3431
+China - Nanjing
+Tel: 86-25-8473-2460
+Fax: 86-25-8473-2470
+China - Qingdao
+Tel: 86-532-8502-7355
+Fax: 86-532-8502-7205
+China - Shanghai
+Tel: 86-21-5407-5533
+Fax: 86-21-5407-5066
+China - Shenyang
+Tel: 86-24-2334-2829
+Fax: 86-24-2334-2393
+China - Shenzhen
+Tel: 86-755-8864-2200
+Fax: 86-755-8203-1760
+China - Wuhan
+Tel: 86-27-5980-5300
+Fax: 86-27-5980-5118
+China - Xian
+Tel: 86-29-8833-7252
+Fax: 86-29-8833-7256
+ASIA/PACIFIC
+China - Xiamen
+Tel: 86-592-2388138
+Fax: 86-592-2388130
+China - Zhuhai
+Tel: 86-756-3210040
+Fax: 86-756-3210049
+India - Bangalore
+Tel: 91-80-3090-4444
+Fax: 91-80-3090-4123
+India - New Delhi
+Tel: 91-11-4160-8631
+Fax: 91-11-4160-8632
+India - Pune
+Tel: 91-20-3019-1500
+Japan - Osaka
+Tel: 81-6-6152-7160
+Fax: 81-6-6152-9310
+Japan - Tokyo
+Tel: 81-3-6880- 3770
+Fax: 81-3-6880-3771
+Korea - Daegu
+Tel: 82-53-744-4301
+Fax: 82-53-744-4302
+Korea - Seoul
+Tel: 82-2-554-7200
+Fax: 82-2-558-5932 or
+82-2-558-5934
+Malaysia - Kuala Lumpur
+Tel: 60-3-6201-9857
+Fax: 60-3-6201-9859
+Malaysia - Penang
+Tel: 60-4-227-8870
+Fax: 60-4-227-4068
+Philippines - Manila
+Tel: 63-2-634-9065
+Fax: 63-2-634-9069
+Singapore
+Tel: 65-6334-8870
+Fax: 65-6334-8850
+Taiwan - Hsin Chu
+Tel: 886-3-5778-366
+Fax: 886-3-5770-955
+Taiwan - Kaohsiung
+Tel: 886-7-213-7828
+Taiwan - Taipei
+Tel: 886-2-2508-8600
+Fax: 886-2-2508-0102
+Thailand - Bangkok
+Tel: 66-2-694-1351
+Fax: 66-2-694-1350
+EUROPE
+Austria - Wels
+Tel: 43-7242-2244-39
+Fax: 43-7242-2244-393
+Denmark - Copenhagen
+Tel: 45-4450-2828
+Fax: 45-4485-2829
+France - Paris
+Tel: 33-1-69-53-63-20
+Fax: 33-1-69-30-90-79
+Germany - Dusseldorf
+Tel: 49-2129-3766400
+Germany - Karlsruhe
+Tel: 49-721-625370
+Germany - Munich
+Tel: 49-89-627-144-0
+Fax: 49-89-627-144-44
+Italy - Milan
+Tel: 39-0331-742611
+Fax: 39-0331-466781
+Italy - Venice
+Tel: 39-049-7625286
+Netherlands - Drunen
+Tel: 31-416-690399
+Fax: 31-416-690340
+Poland - Warsaw
+Tel: 48-22-3325737
+Spain - Madrid
+Tel: 34-91-708-08-90
+Fax: 34-91-708-08-91
+Sweden - Stockholm
+Tel: 46-8-5090-4654
+UK - Wokingham
+Tel: 44-118-921-5800
+Fax: 44-118-921-5820
+Worldwide Sales and Service
+07/14/15

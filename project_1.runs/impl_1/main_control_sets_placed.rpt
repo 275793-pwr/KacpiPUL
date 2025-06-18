@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date         : Wed Jun 18 10:45:05 2025
+| Date         : Wed Jun 18 11:30:58 2025
 | Host         : temp-mati running 64-bit Linux Mint 22.1
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    30 |
-|    Minimum number of control sets                        |    30 |
+| Total control sets                                       |    31 |
+|    Minimum number of control sets                        |    31 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   151 |
+| Unused register locations in slices containing registers |   154 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    30 |
+| Total control sets |    31 |
 | >= 0 to < 4        |    17 |
 | >= 4 to < 6        |     7 |
-| >= 6 to < 8        |     0 |
+| >= 6 to < 8        |     2 |
 | >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     4 |
+| >= 16              |     3 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              45 |           16 |
+| No           | No                    | No                     |              45 |           14 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              21 |            7 |
-| Yes          | No                    | No                     |              68 |           29 |
-| Yes          | No                    | Yes                    |              35 |           15 |
+| No           | Yes                   | No                     |              21 |            6 |
+| Yes          | No                    | No                     |              57 |           26 |
+| Yes          | No                    | Yes                    |              35 |           19 |
 | Yes          | Yes                   | No                     |               8 |            3 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -73,7 +73,7 @@ Table of Contents
 +------------------------+---------------------------------+------------------------------------------------------+------------------+----------------+--------------+
 |      Clock Signal      |          Enable Signal          |                   Set/Reset Signal                   | Slice Load Count | Bel Load Count | Bels / Slice |
 +------------------------+---------------------------------+------------------------------------------------------+------------------+----------------+--------------+
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer[5]  |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer[9]  |                                                      |                1 |              1 |         1.00 |
 |  clk                   | U2/LCD_RS_i_1_n_0               | reset                                                |                1 |              1 |         1.00 |
 |  clk                   | U2/LCD_E_i_1_n_0                | reset                                                |                1 |              1 |         1.00 |
 |  clk                   |                                 |                                                      |                1 |              1 |         1.00 |
@@ -81,8 +81,8 @@ Table of Contents
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer[10] |                                                      |                1 |              1 |         1.00 |
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer[8]  |                                                      |                1 |              1 |         1.00 |
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer[7]  |                                                      |                1 |              1 |         1.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer[9]  |                                                      |                1 |              1 |         1.00 |
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer[6]  |                                                      |                1 |              1 |         1.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer[5]  |                                                      |                1 |              1 |         1.00 |
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer[4]  |                                                      |                1 |              1 |         1.00 |
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer[3]  |                                                      |                1 |              1 |         1.00 |
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/miso_buffer[2]  |                                                      |                1 |              1 |         1.00 |
@@ -91,18 +91,19 @@ Table of Contents
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/spi_ss_int      |                                                      |                1 |              1 |         1.00 |
 |  clk                   | U2/line_no[1]_i_1_n_0           | reset                                                |                1 |              2 |         2.00 |
 |  Clock100MHz_IBUF_BUFG | spi_master_inst/p_0_in_1        | spi_master_inst/FSM_onehot_current_state_reg_n_0_[3] |                2 |              4 |         2.00 |
-|  Clock100MHz_IBUF_BUFG | spi_master_inst/bit_count       | spi_master_inst/FSM_onehot_current_state_reg_n_0_[3] |                1 |              4 |         4.00 |
 |  clk                   | U2/LCD_DATA[3]_i_1_n_0          |                                                      |                1 |              4 |         4.00 |
+|  Clock100MHz_IBUF_BUFG | spi_master_inst/bit_count       | spi_master_inst/FSM_onehot_current_state_reg_n_0_[3] |                1 |              4 |         4.00 |
 |  clk                   | U2/reset_cnt0                   |                                                      |                1 |              4 |         4.00 |
+|  clk                   | U2/next_command[4]_i_1_n_0      | reset                                                |                3 |              5 |         1.67 |
 |  clk                   | U2/state[4]_i_1_n_0             | reset                                                |                2 |              5 |         2.50 |
-|  clk                   | U2/next_command[4]_i_1_n_0      | reset                                                |                2 |              5 |         2.50 |
-|  Clock100MHz_IBUF_BUFG |                                 | spi_master_inst/clk_div_counter[7]_i_1_n_0           |                3 |              5 |         1.67 |
-|  clk                   | U2/g0_b0_n_0                    | reset                                                |                2 |              8 |         4.00 |
-|  clk                   | U2/char_no[5]_i_1_n_0           | reset                                                |                6 |             13 |         2.17 |
+|  Clock100MHz_IBUF_BUFG |                                 | spi_master_inst/clk_div_counter[7]_i_1_n_0           |                2 |              5 |         2.50 |
+|  clk                   | U2/char_no[5]_i_1_n_0           | reset                                                |                4 |              6 |         1.50 |
+| ~clk                   | U2/znak[6]_i_1_n_0              | reset                                                |                3 |              7 |         2.33 |
+|  clk                   | U2/g0_b0_n_0                    | reset                                                |                4 |              8 |         2.00 |
+| ~clk                   | U2/temperature_int0             |                                                      |                5 |             12 |         2.40 |
 |  Clock100MHz_IBUF_BUFG |                                 | U2/lcd_clk_cnt[0]_i_1_n_0                            |                4 |             16 |         4.00 |
-|  clk                   | U2/p_6_in                       |                                                      |                8 |             23 |         2.88 |
 |  Clock100MHz_IBUF_BUFG | counter[0]_i_1_n_0              |                                                      |                6 |             24 |         4.00 |
-|  Clock100MHz_IBUF_BUFG |                                 |                                                      |               15 |             44 |         2.93 |
+|  Clock100MHz_IBUF_BUFG |                                 |                                                      |               13 |             44 |         3.38 |
 +------------------------+---------------------------------+------------------------------------------------------+------------------+----------------+--------------+
 
 

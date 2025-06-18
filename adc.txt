@@ -1,0 +1,2081 @@
+ 1998-2011 Microchip Technology Inc. DS21290F-page 1
+MCP3201
+Features
+• 12-Bit Resolution
+• ±1 LSB max DNL
+• ±1 LSB max INL (MCP3201-B)
+• ±2 LSB max INL (MCP3201-C)
+• On-chip Sample and Hold
+• SPI Serial Interface (modes 0,0 and 1,1)
+• Single Supply Operation: 2.7V - 5.5V
+• 100 ksps Maximum Sampling Rate at VDD = 5V
+• 50 ksps Maximum Sampling Rate at VDD = 2.7V
+• Low-Power CMOS Technology
+• 500 nA Typical Standby Current, 2 µA Maximum
+• 400 µA Maximum Active Current at 5V
+• Industrial Temp Range: -40°C to +85°C
+• 8-pin MSOP, PDIP, SOIC and TSSOP Packages
+Applications
+• Sensor Interface
+• Process Control
+• Data Acquisition
+• Battery Operated Systems
+Functional Block Diagram
+Description
+The Microchip Technology Inc. MCP3201 device is a
+successive approximation 12-bit Analog-to-Digital
+(A/D) Converter with on-board sample and hold
+circuitry. The device provides a single pseudo-differential input. Differential Nonlinearity (DNL) is specified at
+±1 LSB, and Integral Nonlinearity (INL) is offered in
+±1 LSB (MCP3201-B) and ±2 LSB (MCP3201-C)
+versions. Communication with the device is done using
+a simple serial interface compatible with the SPI
+protocol. The device is capable of sample rates of up to
+100 ksps at a clock rate of 1.6 MHz. The MCP3201
+device operates over a broad voltage range (2.7V5.5V). Low-current design permits operation with
+typical standby and active currents of only 500 nA and
+300 µA, respectively. The device is offered in 8-pin
+MSOP, PDIP, TSSOP and 150 mil SOIC packages.
+Package Types
+Comparator
+Sample
+and
+Hold
+12-Bit SAR
+DAC
+Control Logic
+CS/SHDN
+VREF
+IN+
+INVDD VSS
+CLK DOUT
+Shift
+Register
+VREF
+IN+
+IN–
+VSS
+VDD
+CLK
+DOUT
+CS/SHDN
+1
+2
+3
+4
+8
+7
+6
+5
+MSOP, PDIP, SOIC, TSSOP MCP3201
+2.7V 12-Bit A/D Converter with SPI Serial Interface
+MCP3201
+DS21290F-page 2  1998-2011 Microchip Technology Inc.
+NOTES:
+ 1998-2011 Microchip Technology Inc. DS21290F-page 3
+MCP3201
+1.0 ELECTRICAL
+CHARACTERISTICS
+1.1 Maximum Ratings†
+VDD...................................................................................7.0V
+All inputs and outputs w.r.t. VSS ................ -0.6V to VDD +0.6V
+Storage temperature .....................................-65°C to +150°C
+Ambient temp. with power applied ................-65°C to +125°C
+ESD protection on all pins (HBM) .................................> 4 kV
+†Notice: Stresses above those listed under “Maximum
+ratings” may cause permanent damage to the device. This is
+a stress rating only and functional operation of the device at
+those or any other conditions above those indicated in the
+operational listings of this specification is not implied.
+Exposure to maximum rating conditions for extended periods
+may affect device reliability.
+ELECTRICAL CHARACTERISTICS
+Electrical Specifications: All parameters apply at VDD = 5V, VSS = 0V, VREF = 5V, TA = -40°C to +85°C, fSAMPLE = 100 ksps, and
+fCLK = 16*fSAMPLE, unless otherwise noted.
+Parameter Sym Min Typ Max Units Conditions
+Conversion Rate:
+Conversion Time tCONV — — 12 clock
+cycles
+Analog Input Sample Time tSAMPLE 1.5 clock
+cycles
+Throughput Rate fSAMPLE — — 100
+50
+ksps
+ksps
+VDD = VREF = 5V
+VDD = VREF = 2.7V
+DC Accuracy:
+Resolution 12 bits
+Integral Nonlinearity INL —
+—
+±0.75
+±1
+±1
+±2
+LSB
+LSB
+MCP3201-B
+MCP3201-C
+Differential Nonlinearity DNL — ±0.5 ±1 LSB No missing codes over
+temperature
+Offset Error — ±1.25 ±3 LSB
+Gain Error — ±1.25 ±5 LSB
+Dynamic Performance:
+Total Harmonic Distortion THD — -82 — dB VIN = 0.1V to 4.9V@1 kHz
+Signal to Noise and Distortion
+(SINAD)
+SINAD — 72 — dB VIN = 0.1V to 4.9V@1 kHz
+Spurious Free Dynamic Range SFDR — 86 — dB VIN = 0.1V to 4.9V@1 kHz
+Reference Input:
+Voltage Range 0.25 — VDD V Note 2
+Current Drain —
+—
+100
+.001
+150
+3
+µA
+µA CS = VDD = 5V
+Analog Inputs:
+Input Voltage Range (IN+) IN+ IN- — VREF+IN- V
+Input Voltage Range (IN-) IN- VSS-100 VSS+100 mV
+Leakage Current — 0.001 ±1 µA
+Switch Resistance RSS — 1K — W See Figure 4-1
+Sample Capacitor CSAMPLE — 20 — pF See Figure 4-1
+Digital Input/Output:
+Data Coding Format Straight Binary
+High Level Input Voltage VIH 0.7 VDD ——V
+Low Level Input Voltage VIL — — 0.3 VDD V
+Note 1: This parameter is established by characterization and not 100% tested.
+2: See graph that relates linearity performance to VREF level.
+3: Because the sample cap will eventually lose charge, effective clock rates below 10 kHz can affect linearity performance,
+especially at elevated temperatures. See Section 6.2 “Maintaining Minimum Clock Speed” for more information.
+MCP3201
+DS21290F-page 4  1998-2011 Microchip Technology Inc.
+TEMPERATURE CHARACTERISTICS
+High Level Output Voltage VOH 4.1 — — V IOH = -1 mA, VDD = 4.5V
+Low Level Output Voltage VOL — — 0.4 V IOL = 1 mA, VDD = 4.5V
+Input Leakage Current ILI -10 — 10 µA VIN = VSS or VDD
+Output Leakage Current ILO -10 — 10 µA VOUT = VSS or VDD
+Pin Capacitance
+(all inputs/outputs)
+CIN, COUT — — 10 pF VDD = 5.0V (Note 1)
+TA = +25°C, f = 1 MHz
+Timing Parameters:
+Clock Frequency fCLK —
+—
+—
+—
+1.6
+0.8
+MHz
+MHz
+VDD = 5V (Note 3)
+VDD = 2.7V (Note 3)
+Clock High Time tHI 312 — — ns
+Clock Low Time tLO 312 — — ns
+CS Fall To First Rising CLK Edge tSUCS 100 — — ns
+CLK Fall To Output Data Valid tDO — — 200 ns See Test Circuits, Figure 1-2
+CLK Fall To Output Enable tEN — — 200 ns See Test Circuits, Figure 1-2
+CS Rise To Output Disable tDIS — — 100 ns See Test Circuits, Figure 1-2
+(Note 1)
+CS Disable Time tCSH 625 — — ns
+DOUT Rise Time tR — — 100 ns See Test Circuits, Figure 1-2
+(Note 1)
+DOUT Fall Time tF — — 100 ns See Test Circuits, Figure 1-2
+(Note 1)
+Power Requirements:
+Operating Voltage VDD 2.7 — 5.5 V
+Operating Current IDD —
+—
+300
+210
+400
+—
+µA
+µA
+VDD = 5.0V, DOUT unloaded
+VDD = 2.7V, DOUT unloaded
+Standby Current IDDS — 0.5 2 µA CS = VDD = 5.0V
+Electrical Specifications: Unless otherwise indicated, VDD = +2.7V to +5.5V, VSS = GND.
+Parameters Sym Min Typ Max Units Conditions
+Temperature Ranges
+Specified Temperature Range TA -40 — +85 °C
+Operating Temperature Range TA -40 — +85 °C
+Storage Temperature Range TA -65 — +150 °C
+Thermal Package Resistances
+Thermal Resistance, 8L-MSOP JA — 211 — °C/W
+Thermal Resistance, 8L-PDIP JA — 89.5 — °C/W
+Thermal Resistance, 8L-SOIC JA — 149.5 — °C/W
+Thermal Resistance, 8L-TSSOP JA — 139 — °C/W
+ELECTRICAL CHARACTERISTICS (CONTINUED)
+Electrical Specifications: All parameters apply at VDD = 5V, VSS = 0V, VREF = 5V, TA = -40°C to +85°C, fSAMPLE = 100 ksps, and
+fCLK = 16*fSAMPLE, unless otherwise noted.
+Parameter Sym Min Typ Max Units Conditions
+Note 1: This parameter is established by characterization and not 100% tested.
+2: See graph that relates linearity performance to VREF level.
+3: Because the sample cap will eventually lose charge, effective clock rates below 10 kHz can affect linearity performance,
+especially at elevated temperatures. See Section 6.2 “Maintaining Minimum Clock Speed” for more information.
+ 1998-2011 Microchip Technology Inc. DS21290F-page 5
+MCP3201
+FIGURE 1-1: Serial Timing.
+FIGURE 1-2: Test Circuits.
+CS
+CLK
+tSUCS
+tCSH
+tHI tLO
+DOUT
+tEN tDO
+tR tF
+MSB OUT LSB
+tDIS
+NULL BIT HI-Z HI-Z
+VIH
+tDIS
+CS
+DOUT
+Waveform 1*
+DOUT
+Waveform 2†
+90%
+10%
+* Waveform 1 is for an output with internal conditions such that the output is high, unless disabled
+by the output control.
+† Waveform 2 is for an output with internal conditions such that the output is low, unless disabled
+by the output control.
+Voltage Waveforms for tDIS
+Test Point
+1.4V
+DOUT
+Load circuit for tR, tF, tDO
+3 kΩ
+CL = 30 pF
+Test Point
+DOUT
+Load circuit for tDIS and tEN
+3 kΩ
+30 pF
+tDIS Waveform 2
+tDIS Waveform 1
+CS
+CLK
+DOUT
+tEN
+1 2
+B9
+Voltage Waveforms for tEN
+ tEN Waveform
+VDD
+VDD/2
+VSS
+3 4
+DOUT
+tR
+Voltage Waveforms for tR, tF
+CLK
+DOUT
+tDO
+Voltage Waveforms for tDO
+tF
+VOH
+VOL
+MCP3201
+DS21290F-page 6  1998-2011 Microchip Technology Inc.
+NOTES:
+ 1998-2011 Microchip Technology Inc. DS21290F-page 7
+MCP3201
+2.0 TYPICAL PERFORMANCE CHARACTERISTICS
+Note: Unless otherwise indicated, VDD = VREF = 5V, VSS = 0V, fSAMPLE = 100 ksps, fCLK = 16*fSAMPLE, TA = +25°C.
+FIGURE 2-1: Integral Nonlinearity (INL)
+vs. Sample Rate.
+FIGURE 2-2: Integral Nonlinearity (INL)
+vs. VREF.
+FIGURE 2-3: Integral Nonlinearity (INL)
+vs. Code (Representative Part).
+FIGURE 2-4: Integral Nonlinearity (INL)
+vs. Sample Rate (VDD = 2.7V).
+FIGURE 2-5: Integral Nonlinearity (INL)
+vs. VREF (VDD = 2.7V).
+FIGURE 2-6: Integral Nonlinearity (INL)
+vs. Code (Representative Part, VDD = 2.7V).
+Note: The graphs provided following this note are a statistical summary based on a limited number of samples
+and are provided for informational purposes only. The performance characteristics listed herein are not
+tested or guaranteed. In some graphs, the data presented may be outside the specified operating range
+(e.g., outside specified power supply range) and therefore outside the warranted range.
+-1.0
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0 25 50 75 100 125 150
+Sample Rate (ksps)
+INL (LSB)
+Positive INL
+Negative INL
+-2.0
+-1.5
+-1.0
+-0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+012345
+VREF (V)
+INL (LSB)
+Positive INL
+Negative INL
+-1.0
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0 512 1024 1536 2048 2560 3072 3584 4096
+Digital Code
+INL (LSB)
+-2.0
+-1.5
+-1.0
+-0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+0 20 40 60 80 100
+Sample Rate (ksps)
+INL (LSB)
+VDD = VREF = 2.7V
+Positive INL
+Negative INL
+-2.0
+-1.5
+-1.0
+-0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+0.0 0.5 1.0 1.5 2.0 2.5 3.0
+VREF (V)
+ INL (LSB)
+Positive INL
+Negative INL
+VDD = 2.7V
+FSAMPLE = 50 ksps
+-1.0
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0 512 1024 1536 2048 2560 3072 3584 4096
+Digital Code
+INL (LSB)
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+MCP3201
+DS21290F-page 8  1998-2011 Microchip Technology Inc.
+Note: Unless otherwise indicated, VDD = VREF = 5V, VSS = 0V, fSAMPLE = 100 ksps, fCLK = 16*fSAMPLE, TA = +25°C.
+FIGURE 2-7: Integral Nonlinearity (INL)
+vs. Temperature.
+FIGURE 2-8: Differential Nonlinearity
+(DNL) vs. Sample Rate.
+FIGURE 2-9: Differential Nonlinearity
+(DNL) vs. VREF.
+FIGURE 2-10: Integral Nonlinearity (INL)
+vs. Temperature (VDD = 2.7V).
+FIGURE 2-11: Differential Nonlinearity
+(DNL) vs. Sample Rate (VDD = 2.7V).
+FIGURE 2-12: Differential Nonlinearity
+(DNL) vs. VREF (VDD = 2.7V).
+-1.0
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+-50 -25 0 25 50 75 100
+Temperature (°C)
+INL (LSB)
+Positive INL
+Negative INL
+-1.0
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0 25 50 75 100 125 150
+Sample Rate (ksps)
+DNL (LSB)
+Positive DNL
+Negative DNL
+-2.0
+-1.0
+0.0
+1.0
+2.0
+3.0
+012345
+VREF (V)
+ DNL (LSB)
+Negative DNL
+Positive DNL
+-1.0
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+-50 -25 0 25 50 75 100
+Temperature (°C)
+INL (LSB)
+Positive INL
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+Negative INL
+-2.0
+-1.5
+-1.0
+-0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+0 20 40 60 80 100
+Sample Rate (ksps)
+DNL (LSB)
+VDD = VREF = 2.7V
+Positive DNL
+Negative DNL
+-3.0
+-2.0
+-1.0
+0.0
+1.0
+2.0
+3.0
+0.0 0.5 1.0 1.5 2.0 2.5 3.0
+VREF(V)
+DNL (LSB)
+Positive DNL
+Negative DNL
+VDD = 2.7V
+FSAMPLE = 50 ksps
+ 1998-2011 Microchip Technology Inc. DS21290F-page 9
+MCP3201
+Note: Unless otherwise indicated, VDD = VREF = 5V, VSS = 0V, fSAMPLE = 100 ksps, fCLK = 16*fSAMPLE, TA = +25°C.
+FIGURE 2-13: Differential Nonlinearity
+(DNL) vs. Code (Representative Part).
+FIGURE 2-14: Differential Nonlinearity
+(DNL) vs. Temperature.
+FIGURE 2-15: Gain Error vs. VREF.
+FIGURE 2-16: Differential Nonlinearity
+(DNL) vs. Code (Representative Part,
+VDD = 2.7V).
+FIGURE 2-17: Differential Nonlinearity
+(DNL) vs. Temperature (VDD = 2.7V).
+FIGURE 2-18: Offset Error vs. VREF.
+-1.0
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0 512 1024 1536 2048 2560 3072 3584 4096
+Digital Code
+DNL (LSB)
+-1.0
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+-50 -25 0 25 50 75 100
+Temperature (°C)
+DNL (LSB)
+Positive DNL
+Negative DNL
+-2
+-1
+0
+1
+2
+3
+4
+5
+012345
+VREF(V)
+Gain Error (LSB)
+VDD = 2.7V
+FSAMPLE = 50 ksps
+VDD = 5V
+FSAMPLE = 100 ksps
+-1.0
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+0 512 1024 1536 2048 2560 3072 3584 4096
+Digital Code
+DNL (LSB)
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+-1.0
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+-50 -25 0 25 50 75 100
+Temperature (°C)
+DNL (LSB)
+Positive DNL
+VDD = 2.7V
+FSAMPLE = 50ksps
+Negative DNL
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+012345
+VREF (V)
+Offset Error (LSB)
+VDD = 5V
+FSAMPLE = 100 ksps
+VDD = 2.7V
+FSAMPLE = 50ksps
+MCP3201
+DS21290F-page 10  1998-2011 Microchip Technology Inc.
+Note: Unless otherwise indicated, VDD = VREF = 5V, VSS = 0V, fSAMPLE = 100 ksps, fCLK = 16*fSAMPLE, TA = +25°C.
+FIGURE 2-19: Gain Error vs. Temperature.
+FIGURE 2-20: Signal-to-Noise Ratio (SNR)
+vs. Input Frequency.
+FIGURE 2-21: Total Harmonic Distortion
+(THD) vs. Input Frequency.
+FIGURE 2-22: Offset Error vs.
+Temperature.
+FIGURE 2-23: Signal-to-Noise and
+Distortion (SINAD) vs. Input Frequency.
+FIGURE 2-24: Signal-to-Noise and
+Distortion (SINAD) vs. Input Signal Level.
+-1.0
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+-50 -25 0 25 50 75 100
+Temperature (°C)
+Gain Error (LSB)
+VDD = VREF = 5V
+FSAMPLE = 100 ksps
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+1 10 100
+Input Frequency (kHz)
+SNR (dB)
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+VDD = VREF = 5V
+FSAMPLE = 100 ksps
+-100
+-90
+-80
+-70
+-60
+-50
+-40
+-30
+-20
+-10
+0
+1 10 100
+Input Frequency (kHz)
+THD (dB)
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+VDD = VREF = 5V, FSAMPLE = 100 ksps
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+-50 -25 0 25 50 75 100
+Temperature (°C)
+Offset Error (LSB)
+VDD = VREF = 5V
+FSAMPLE = 100 ksps
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+1 10 100
+Input Frequency (kHz)
+SINAD (dB)
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+VDD = VREF = 5V
+FSAMPLE = 100 ksps
+0
+10
+20
+30
+40
+50
+60
+70
+80
+-40 -35 -30 -25 -20 -15 -10 -5 0
+Input Signal Level (dB)
+SINAD (dB)
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+VDD = VREF = 5V
+FSAMPLE = 100 ksps
+ 1998-2011 Microchip Technology Inc. DS21290F-page 11
+MCP3201
+Note: Unless otherwise indicated, VDD = VREF = 5V, VSS = 0V, fSAMPLE = 100 ksps, fCLK = 16*fSAMPLE, TA = +25°C.
+FIGURE 2-25: Effective Number of Bits
+(ENOB) vs. VREF.
+FIGURE 2-26: Spurious Free Dynamic
+Range (SFDR) vs. Input Frequency.
+FIGURE 2-27: Frequency Spectrum of
+10 kHz input (Representative Part).
+FIGURE 2-28: Effective Number of Bits
+(ENOB) vs. Input Frequency.
+FIGURE 2-29: Power Supply Rejection
+(PSR) vs. Ripple Frequency.
+FIGURE 2-30: Frequency Spectrum of
+1 kHz input (Representative Part, VDD = 2.7V).
+9.00
+9.25
+9.50
+9.75
+10.00
+10.25
+10.50
+10.75
+11.00
+11.25
+11.50
+11.75
+12.00
+0.0 0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0
+VREF (V)
+ENOB (rms)
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+VDD = VREF = 5V
+FSAMPLE =100 ksps
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+1 10 100
+Input Frequency (kHz)
+SFDR (dB)
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+VDD = VREF = 5V, FSAMPLE = 100 ksps
+-130
+-120
+-110
+-100
+-90
+-80
+-70
+-60
+-50
+-40
+-30
+-20
+-10
+0
+0 10000 20000 30000 40000 50000
+Frequency (Hz)
+Amplitude (dB)
+VDD = VREF = 5V
+FSAMPLE = 100 ksps
+FINPUT = 9.985kHz
+4096 points
+8.0
+8.5
+9.0
+9.5
+10.0
+10.5
+11.0
+11.5
+12.0
+1 10 100
+Input Frequency (kHz)
+ENOB (rms)
+VDD = 2.7V
+FSAMPLE = 50 ksps
+VDD = 5V
+FSAMPLE = 100 ksps
+-80
+-70
+-60
+-50
+-40
+-30
+-20
+-10
+0
+1 10 100 1000 10000
+ Ripple Frequency (kHz)
+Power Supply Rejection (dB)
+-130
+-120
+-110
+-100
+-90
+-80
+-70
+-60
+-50
+-40
+-30
+-20
+-10
+0
+0 5000 10000 15000 20000 25000
+Frequency (Hz)
+Amplitude (dB)
+VDD = VREF = 2.7V
+FSAMPLE = 50 ksps
+FINPUT = 998.76 Hz
+4096 points
+MCP3201
+DS21290F-page 12  1998-2011 Microchip Technology Inc.
+Note: Unless otherwise indicated, VDD = VREF = 5V, VSS = 0V, fSAMPLE = 100 ksps, fCLK = 16*fSAMPLE, TA = +25°C.
+FIGURE 2-31: IDD vs. VDD.
+FIGURE 2-32: IDD vs. Clock Frequency.
+FIGURE 2-33: IDD vs. Temperature.
+FIGURE 2-34: IREF vs. VDD.
+FIGURE 2-35: IREF vs. Clock Frequency.
+FIGURE 2-36: IREF vs. Temperature.
+0
+50
+100
+150
+200
+250
+300
+350
+400
+450
+500
+2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0
+VDD (V)
+IDD (µA)
+ VREF = VDD
+All points at FCLK = 1.6 MHz, except
+at VREF = VDD = 2.5V, FCLK = 800 kHz
+0
+50
+100
+150
+200
+250
+300
+350
+400
+10 100 1000 10000
+Clock Frequency (kHz)
+IDD (µA)
+VDD = VREF = 5V
+VDD = VREF = 2.7V
+0
+50
+100
+150
+200
+250
+300
+350
+400
+-50 -25 0 25 50 75 100
+Temperature (°C)
+IDD (µA)
+VDD = VREF = 5V
+FCLK = 1.6 MHz
+VDD = VREF = 2.7V
+FCLK = 800 kHz
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0
+VDD (V)
+IREF (µA)
+VREF = VDD
+All points at FCLK = 1.6 MHz, except
+at VREF = VDD = 2.5V, FCLK = 800 kHz
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+10 100 1000 10000
+Clock Frequency (kHz)
+IREF (µA)
+VDD = VREF = 5V
+VDD = VREF = 2.7V
+0
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+-50 -25 0 25 50 75 100
+Temperature (°C)
+IREF (µA)
+VDD = VREF = 5V
+FCLK = 1.6 MHz
+VDD = VREF = 2.7V
+FCLK = 800 kHz
+ 1998-2011 Microchip Technology Inc. DS21290F-page 13
+MCP3201
+Note: Unless otherwise indicated, VDD = VREF = 5V, VSS = 0V, fSAMPLE = 100 ksps, fCLK = 16*fSAMPLE, TA = +25°C.
+FIGURE 2-37: IDDS vs. VDD.
+FIGURE 2-38: IDDS vs. Temperature.
+FIGURE 2-39: Analog Input Leakage
+Current vs. Temperature.
+0
+10
+20
+30
+40
+50
+60
+70
+80
+2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0
+VDD (V)
+IDDS (pA)
+VREF = CS = VDD
+0.01
+0.10
+1.00
+10.00
+100.00
+-50 -25 0 25 50 75 100
+Temperature (°C)
+IDDS (nA)
+VDD = VREF = CS = 5V
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+2.0
+-50 -25 0 25 50 75 100
+Temperature (°C)
+Analog Input Leakage (nA)
+VDD = VREF = 5V
+FCLK = 1.6 MHz
+MCP3201
+DS21290F-page 14  1998-2011 Microchip Technology Inc.
+NOTES:
+ 1998-2011 Microchip Technology Inc. DS21290F-page 15
+MCP3201
+3.0 PIN DESCRIPTIONS
+The descriptions of the pins are listed in Table 3-1.
+Additional descriptions of the device pins follows.
+TABLE 3-1: PIN FUNCTION TABLE
+3.1 Positive Analog Input (IN+)
+Positive analog input. This input can vary from IN- to
+VREF + IN-.
+3.2 Negative Analog Input (IN-)
+Negative analog input. This input can vary ±100 mV
+from VSS.
+3.3 Chip Select/Shutdown (CS/SHDN)
+The CS/SHDN pin is used to initiate communication
+with the device when pulled low and will end a
+conversion and put the device in low power standby
+when pulled high. The CS/SHDN pin must be pulled
+high between conversions.
+3.4 Serial Clock (CLK)
+The SPI clock pin is used to initiate a conversion and to
+clock out each bit of the conversion as it takes place.
+See Section 6.2 “Maintaining Minimum Clock
+Speed” for constraints on clock speed.
+3.5 Serial Data Output (DOUT)
+The SPI serial data output pin is used to shift out the
+results of the A/D conversion. Data will always change
+on the falling edge of each clock as the conversion
+takes place.
+MCP3201
+Symbol Description MSOP, PDIP, SOIC,
+TSSOP
+1 VREF Reference Voltage Input
+2 IN+ Positive Analog Input
+3 IN- Negative Analog Input
+4 VSS Ground
+5 CS/SHDN Chip Select/Shutdown Input
+6 DOUT Serial Data Out
+7 CLK Serial Clock
+8 VDD +2.7V to 5.5V Power Supply
+MCP3201
+DS21290F-page 16  1998-2011 Microchip Technology Inc.
+NOTES:
+ 1998-2011 Microchip Technology Inc. DS21290F-page 17
+MCP3201
+4.0 DEVICE OPERATION
+The MCP3201 A/D Converter employs a conventional
+SAR architecture. With this architecture, a sample is
+acquired on an internal sample/hold capacitor for
+1.5 clock cycles starting on the first rising edge of the
+serial clock after CS has been pulled low. Following this
+sample time, the input switch of the converter opens
+and the device uses the collected charge on the
+internal sample and hold capacitor to produce a serial
+12-bit digital output code. Conversion rates of 100 ksps
+are possible on the MCP3201 device. See Section 6.2
+“Maintaining Minimum Clock Speed” for information
+on minimum clock rates. Communication with the
+device is done using a 3-wire SPI-compatible interface.
+4.1 Analog Inputs
+The MCP3201 device provides a single pseudo-differential input. The IN+ input can range from IN- to VREF
+(VREF + IN-). The IN- input is limited to ±100 mV from
+the VSS rail. The IN- input can be used to cancel small
+signal common-mode noise which is present on both
+the IN+ and IN- inputs.
+For the A/D Converter to meet specification, the charge
+holding capacitor (CSAMPLE) must be given enough
+time to acquire a 12-bit accurate voltage level during
+the 1.5 clock cycle sampling period. The analog input
+model is shown in Figure 4-1.
+In this diagram, it is shown that the source impedance
+(RS) adds to the internal sampling switch (RSS)
+impedance, directly affecting the time that is required to
+charge the capacitor (CSAMPLE). Consequently, a
+larger source impedance increases the offset, gain,
+and integral linearity errors of the conversion.
+Ideally, the impedance of the signal source should be
+near zero. This is achievable with an operational
+amplifier such as the MCP601, which has a closed loop
+output impedance of tens of ohms. The adverse affects
+of higher source impedances are shown in Figure 4-2.
+If the voltage level of IN+ is equal to or less than IN-, the
+resultant code will be 000h. If the voltage at IN+ is equal
+to or greater than {[VREF + (IN-)] - 1 LSB}, then the
+output code will be FFFh. If the voltage level at IN- is
+more than 1 LSB below VSS, then the voltage level at
+the IN+ input will have to go below VSS to see the 000h
+output code. Conversely, if IN- is more than 1 LSB
+above VSS, then the FFFh code will not be seen unless
+the IN+ input level goes above VREF level.
+4.2 Reference Input
+The reference input (VREF) determines the analog input
+voltage range and the LSB size, as shown below.
+EQUATION 4-1:
+As the reference input is reduced, the LSB size is
+reduced accordingly. The theoretical digital output code
+produced by the A/D Converter is a function of the
+analog input signal and the reference input as shown
+below.
+EQUATION 4-2:
+When using an external voltage reference device, the
+system designer should always refer to the
+manufacturer’s recommendations for circuit layout.
+Any instability in the operation of the reference device
+will have a direct effect on the operation of the
+A/D Converter.
+LSB Size
+VREF
+4096 = ------------
+Digital Output Code
+4096*VIN
+VREF
+= ------------------------
+Where:
+VIN = Analog Input Voltage = V(IN+) - V(IN-)
+VREF = Reference Voltage
+MCP3201
+DS21290F-page 18  1998-2011 Microchip Technology Inc.
+FIGURE 4-1: Analog Input Model.
+FIGURE 4-2: Maximum Clock Frequency
+vs. Input Resistance (RS) to maintain less than a
+0.1 LSB deviation in INL from nominal
+conditions.
+VA CPIN
+RSS CHx
+7 pF
+VT = 0.6V
+VT = 0.6V
+ILEAKAGE
+Sampling
+Switch
+SS RS = 1 k
+CSAMPLE
+= DAC capacitance
+VSS
+VDD
+±1 nA = 20 pF
+Legend:
+VA = Signal Source
+RSS = Source Impedance
+CHx = Input Channel Pad
+CPIN = Input Pin Capacitance
+VT = Threshold Voltage
+ILEAKAGE = Leakage Current At The Pin
+Due To Various Junctions
+SS = Sampling Switch
+RS = Sampling Switch Resistor
+CSAMPLE = Sample/hold Capacitance
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+1.6
+1.8
+100 1000 10000
+Input Resistance (Ohms)
+Clock Frequency (MHz)
+VDD = VREF = 5V
+VDD = VREF = 2.7V
+ 1998-2011 Microchip Technology Inc. DS21290F-page 19
+MCP3201
+5.0 SERIAL COMMUNICATIONS
+Communication with the device is done using a
+standard SPI-compatible serial interface. Initiating
+communication with the MCP3201 device begins with
+the CS going low. If the device was powered up with the
+CS pin low, it must be brought high and back low to
+initiate communication. The device will begin to sample
+the analog input on the first rising edge after CS goes
+low. The sample period will end in the falling edge of the
+second clock, at which time the device will output a low
+null bit. The next 12 clocks will output the result of the
+conversion with MSB first, as shown in Figure 5-1. Data
+is always output from the device on the falling edge of
+the clock. If all 12 data bits have been transmitted and
+the device continues to receive clocks while the CS is
+held low, the device will output the conversion result
+LSB first, as shown in Figure 5-2. If more clocks are
+provided to the device while CS is still low (after the
+LSB first data has been transmitted), the device will
+clock out zeros indefinitely.
+FIGURE 5-1: Communication with MCP3201 device using MSB first Format.
+FIGURE 5-2: Communication with MCP3201 device using LSB first Format.
+CS
+CLK
+DOUT
+tCYC
+POWER
+DOWN TSUCS
+TSAMPLE tCONV
+tDATA**
+* After completing the data transfer, if further clocks are applied with CS low, the A/D Converter will output LSB first data, followed
+by zeros indefinitely. See Figure 5-2 below.
+** tDATA: during this time, the bias current and the comparator power-down and the reference input becomes a high-impedance
+node, leaving the CLK running to clock out the LSB-first data or zeros.
+TCSH
+NULL
+BIT B11 B10 B9 B8 B7 B6 B5 B4 B3 B2 B1 B0* HI-Z HI-Z
+B11 B10 B9 B8 NULL
+BIT
+CS
+CLK
+DOUT
+tCYC
+POWER DOWN tSUCS
+tSAMPLE tCONV tDATA**
+* After completing the data transfer, if further clocks are applied with CS low, the A/D Converter will output zeros indefinitely.
+** tDATA: during this time, the bias current and the comparator power-down and the reference input becomes a high-impedance
+node, leaving the CLK running to clock out the LSB-first data or zeros.
+tCSH
+NULL
+BIT B11B10B9 B8 B7 B6 B5 B4 B3 B2 B1 B0 HI-Z B1 B2 B3 B4 B5 B6 B7 B8 B9 B10B11* HI-Z
+MCP3201
+DS21290F-page 20  1998-2011 Microchip Technology Inc.
+NOTES:
+ 1998-2011 Microchip Technology Inc. DS21290F-page 21
+MCP3201
+6.0 APPLICATIONS INFORMATION
+6.1 Using the MCP3201 Device with
+Microcontroller SPI Ports
+With most microcontroller SPI ports, it is required to
+clock out eight bits at a time. If this is the case, it will be
+necessary to provide more clocks than are required for
+the MCP3201. As an example, Figure 6-1 and
+Figure 6-2 show how the MCP3201 device can be
+interfaced to a microcontroller with a standard SPI port.
+Since the MCP3201 always clocks data out on the
+falling edge of clock, the MCU SPI port must be
+configured to match this operation. SPI Mode 0,0 (clock
+idles low) and SPI Mode 1,1 (clock idles high) are both
+compatible with the MCP3201. Figure 6-1 depicts the
+operation shown in SPI Mode 0,0, which requires that
+the CLK from the microcontroller idles in the ‘low’ state.
+As shown in the diagram, the MSB is clocked out of the
+A/D Converter on the falling edge of the third clock
+pulse. After the first eight clocks have been sent to the
+device, the microcontroller’s receive buffer will contain
+two unknown bits (the output is at high-impedance for
+the first two clocks), the null bit and the highest order
+five bits of the conversion. After the second eight clocks
+have been sent to the device, the MCU receive register
+will contain the lowest-order seven bits and the B1 bit
+repeated as the A/D Converter has begun to shift out
+LSB first data with the extra clock. Typical procedure
+would then call for the lower-order byte of data to be
+shifted right by one bit to remove the extra B1 bit. The
+B7 bit is then transferred from the high-order byte to the
+lower-order byte, and then the higher-order byte is
+shifted one bit to the right as well. Easier manipulation
+of the converted data can be obtained by using this
+method.
+Figure 6-2 shows the same thing in SPI Mode 1,1
+which requires that the clock idles in the high state. As
+with mode 0,0, the A/D Converter outputs data on the
+falling edge of the clock and the MCU latches data from
+the A/D Converter in on the rising edge of the clock.
+FIGURE 6-1: SPI Communication using 8-bit segments (Mode 0,0: SCLK idles low).
+FIGURE 6-2: SPI Communication using 8-bit segments (Mode 1,1: SCLK idles high).
+CS
+CLK 9 10 11 12 13 14 15 16
+DOUT
+NULL
+BIT B11 B10 B9 B8 B7 B6 B5 B4 B3 B2 B1 B0 HI-Z
+??0 B11 B10 B9 B8 B7 B6 B5 B4 B3 B2 B1 B0
+MCU latches data from A/D
+Data is clocked out of A/D
+Converter on falling edges
+Converter on rising edges of SCLK
+12345678
+HI-Z B1
+B1
+LSB first data begins
+to come out
+B2
+Data stored into MCU receive register
+after transmission of first 8 bits
+Data stored into MCU receive register
+after transmission of second 8 bits
+CS
+CLK 9 10 11 12 13 14 15 16
+DOUT
+NULL
+BIT B11 B10 B9 B8 B7 B6 B5 B4 B3 B2 B1 B0 HI-Z
+??0 B11 B10 B9 B8 B7 B6 B5 B4 B3 B2 B1 B0
+MCU latches data from A/D
+Data is clocked out of A/D
+Converter on falling edges
+Converter on rising edges of SCLK
+123 4 567 8
+B1
+B1
+LSB first data begins
+to come out
+HI-Z
+Data stored into MCU receive register
+after transmission of first 8 bits
+Data stored into MCU receive register
+after transmission of second 8 bits
+MCP3201
+DS21290F-page 22  1998-2011 Microchip Technology Inc.
+6.2 Maintaining Minimum Clock Speed
+When the MCP3201 initiates the sample period, charge
+is stored on the sample capacitor. When the sample
+period is complete, the device converts one bit for each
+clock that is received. It is important for the user to note
+that a slow clock rate will allow charge to bleed off the
+sample cap while the conversion is taking place. At
+85°C (worst-case condition), the part will maintain
+proper charge on the sample capacitor for at least
+1.2 ms after the sample period has ended. This means
+that the time between the end of the sample period and
+the time that all 12 data bits have been clocked out
+must not exceed 1.2 ms (effective clock frequency of
+10 kHz). Failure to meet this criteria may induce
+linearity errors into the conversion outside the rated
+specifications. It should be noted that during the entire
+conversion cycle, the A/D Converter does not require a
+constant clock speed or duty cycle, as long as all timing
+specifications are met.
+6.3 Buffering/Filtering the Analog
+Inputs
+If the signal source for the A/D Converter is not a lowimpedance source, it will have to be buffered
+or inaccurate conversion results may occur.
+See Figure 4-2. It is also recommended that a filter be
+used to eliminate any signals that may be aliased back
+into the conversion results. This is illustrated in
+Figure 6-3 where an op amp is used to drive the analog
+input of the MCP3201 device. This amplifier provides a
+low-impedance source for the converter input and a
+low-pass filter, which eliminates unwanted highfrequency noise.
+Low-pass (anti-aliasing) filters can be designed using
+Microchip’s interactive FilterLab® software. FilterLab
+will calculate capacitor and resistor values, as well as
+determine the number of poles that are required for the
+application. For more information on filtering signals,
+see application note AN699 “Anti-Aliasing Analog
+Filters for Data Acquisition Systems.”
+FIGURE 6-3: The MCP601 Operational
+Amplifier is used to implement a 2nd order antialiasing filter for the signal being converted by
+the MCP3201 device.
+MCP3201
+VDD
+10 µF
+ININ+
+-
+VIN +
+C1
+C2
+VREF
+4.096V
+Reference
+1 µF
+0.1 µF 10 µF
+MCP601 R1
+R2
+R3
+R4
+MCP1541 CL
+ 1998-2011 Microchip Technology Inc. DS21290F-page 23
+MCP3201
+6.4 Layout Considerations
+When laying out a printed circuit board for use with
+analog components, care should be taken to reduce
+noise wherever possible. A bypass capacitor should
+always be used with this device and should be placed
+as close as possible to the device pin. A bypass
+capacitor value of 1 µF is recommended.
+Digital and analog traces should be separated as much
+as possible on the board and no traces should run
+underneath the device or the bypass capacitor. Extra
+precautions should be taken to keep traces with highfrequency signals (such as clock lines) as far as
+possible from analog traces.
+Use of an analog ground plane is recommended in
+order to keep the ground potential the same for all
+devices on the board. Providing VDD connections to
+devices in a “star” configuration can also reduce noise
+by eliminating current return paths and associated
+errors. See Figure 6-4. For more information on layout
+tips when using A/D Converter, refer to AN688 “Layout
+Tips for 12-Bit A/D Converter Applications”.
+FIGURE 6-4: VDD traces arranged in a
+‘Star’ configuration in order to reduce errors
+caused by current return paths.
+VDD
+Connection
+Device 1
+Device 2
+Device 3
+Device 4
+MCP3201
+DS21290F-page 24  1998-2011 Microchip Technology Inc.
+NOTES:
+ 1998-2011 Microchip Technology Inc. DS21290F-page 25
+MCP3201
+7.0 PACKAGING INFORMATION
+7.1 Package Marking Information
+Legend: XX...X Customer-specific information
+Y Year code (last digit of calendar year)
+YY Year code (last 2 digits of calendar year)
+WW Week code (week of January 1 is week ‘01’)
+NNN Alphanumeric traceability code
+ Pb-free JEDEC designator for Matte Tin (Sn)
+* This package is Pb-free. The Pb-free JEDEC designator ( )
+can be found on the outer packaging for this package.
+Note: In the event the full Microchip part number cannot be marked on one line, it will
+be carried over to the next line, thus limiting the number of available
+characters for customer-specific information.
+e3
+e3
+8-Lead MSOP (3x3 mm) Example
+8-Lead PDIP (300 mil) Example
+XXXXXXXX
+XXXXXNNN
+YYWW
+8-Lead SOIC (3.90 mm) Example
+NNN
+8-Lead TSSOP (4.4 mm) Example
+3201CI
+130256
+3201-B
+I/P ^^ 256
+1130
+e3
+3201-BI
+SN ^^1130 e3
+201C
+I130
+256
+256
+MCP3201
+DS21290F-page 26  1998-2011 Microchip Technology Inc.
+	
+
+
+
+		
+
+  !"#$%!	&	'(!%&! %(
+%")%%%"	
+ & 
+ "*"
+
+%!"&
+"$ 
+		
+%	! 
+ 
+"$ 
+		
+%	! 
+  
+%#"+&&	 "
+, & 
+"%
+		*-+
+./0 . & 
+
+	%#%! 
+))%
+!%%
+	 
+*10 $	& 
+'! !)%
+!%%
+	'$
+	$
+	&%
+!	
+  
+
+ 1
+	%&
+ %!		%2"	) '  %	
+2$%
+
+%"%
+%%033)))&	
+
+&32
+4% 55**
+& 
+5&% 6 67 8
+6!&(	
+$ 6 9
+%  :+./
+7	;%  < < 
+
+""22  + 9+ +
+%"
+$$   < +
+7	="% * ./
+
+""2="% * ,./
+7	5%  ,./
+1
+
+%5% 5  : 9
+1
+
+%	% 5 +*1
+1
+
+%  > < 9>
+5"2  9 < ,
+5"="% (  < 
+D
+N
+E
+E1
+NOTE 1
+1 2
+e
+b
+A
+A1
+A2 c
+L1 L
+φ
+	
+ 
+
+ 	) /.
+ 1998-2011 Microchip Technology Inc. DS21290F-page 27
+MCP3201
+Note: For the most current package drawings, please see the Microchip Packaging Specification located at
+http://www.microchip.com/packaging
+MCP3201
+DS21290F-page 28  1998-2011 Microchip Technology Inc.
+	
+
+ 	!"##
+$%	 	
+
+  !"#$%!	&	'(!%&! %(
+%")%%%"	
+ ?$%/	%	 %
+, & 
+ "*"
+
+%!"&
+"$ 
+		
+%	! 
+ 
+"$ 
+		
+%	! 
+  
+%#"@	 "
+ & 
+"%
+		*-+
+./0. & 
+
+	%#%! 
+))%
+!%%
+	 
+ 1
+	%&
+ %!		%2"	) '  %	
+2$%
+
+%"%
+%%033)))&	
+
+&32
+4% 6/;*
+& 
+5&% 6 67 8
+6!&(	
+$ 6 9
+%  ./
+
+%
+%  < < 
+
+""22  + , +
+. %
+%  + < <
+
+!"	%
+
+!"	="% *  , ,+
+
+""2="% *  + 9
+7	5%  ,9 ,:+ 
+%
+% 5 + , +
+5"2  9  +
+4	5"="% (  : 
+5
+)	5"="% (  9 
+7	
+)? . < < ,
+N
+E1
+NOTE 1
+D
+1 2 3
+A
+A1
+A2
+L
+b1
+b
+e
+E
+eB
+c
+	
+ 
+
+ 	) /9.
+ 1998-2011 Microchip Technology Inc. DS21290F-page 29
+MCP3201
+Note: For the most current package drawings, please see the Microchip Packaging Specification located at
+http://www.microchip.com/packaging
+MCP3201
+DS21290F-page 30  1998-2011 Microchip Technology Inc.
+Note: For the most current package drawings, please see the Microchip Packaging Specification located at
+http://www.microchip.com/packaging
+ 1998-2011 Microchip Technology Inc. DS21290F-page 31
+MCP3201
+	
+
+
+
+!&'"()#$% *
+ 1
+	%&
+ %!		%2"	) '  %	
+2$%
+
+%"%
+%%033)))&	
+
+&32
+MCP3201
+DS21290F-page 32  1998-2011 Microchip Technology Inc.
+	
++,,
+
+
++!-(-$%+	
+
+  !"#$%!	&	'(!%&! %(
+%")%%%"	
+ & 
+ "*"
+
+%!"&
+"$ 
+		
+%	! 
+ 
+"$ 
+		
+%	! 
+  
+%#"+&&	 "
+, & 
+"%
+		*-+
+./0 . & 
+
+	%#%! 
+))%
+!%%
+	 
+*10 $	& 
+'! !)%
+!%%
+	'$
+	$
+	&%
+!	
+  
+
+ 1
+	%&
+ %!		%2"	) '  %	
+2$%
+
+%"%
+%%033)))&	
+
+&32
+4% 55**
+& 
+5&% 6 67 8
+6!&(	
+$ 6 9
+%  :+./
+7	;%  < < 
+
+""22  9  +
+%"
+$$  + < +
+7	="% * :./
+
+""2="% * ,  +
+
+""25%   , ,
+1
+
+%5% 5 + : +
+1
+
+%	% 5 *1
+1
+
+%  > < 9>
+5"2   < 
+5"="% (  < ,
+D
+N
+E
+E1
+NOTE 1
+1 2
+b
+e
+c
+A
+A1
+A2
+L1 L
+φ
+	
+ 
+
+ 	) /9:.
+ 1998-2011 Microchip Technology Inc. DS21290F-page 33
+MCP3201
+Note: For the most current package drawings, please see the Microchip Packaging Specification located at
+http://www.microchip.com/packaging
+MCP3201
+DS21290F-page 34  1998-2011 Microchip Technology Inc.
+NOTES:
+ 1998-2011 Microchip Technology Inc. DS21290F-page 35
+MCP3201
+APPENDIX A: REVISION HISTORY
+Revision F (August 2011)
+• Updated Product Identification System section.
+- Corrected marking drawings for MSOP
+packages.
+- Updated PDIP, SOIC, and TSSOP package
+specification drawings.
+Revision E (November 2008)
+The following is the list of modifications:
+1. Updated Section 7.0 “Packaging Information”.
+2. Updated Product Identification System
+section.
+Revision D (January 2007)
+The following is the list of modifications:
+1. This revision includes updates to the packaging
+diagrams.
+Revision C (August 2001)
+The following is the list of modifications:
+1. This revision includes undocumented changes.
+Revision B (August 1999)
+The following is the list of modifications:
+1. This revision includes undocumented changes.
+Revision A (September 1998)
+• Original release of this document.
+MCP3201
+DS21290F-page 36  1998-2011 Microchip Technology Inc.
+NOTES:
+ 1998-2011 Microchip Technology Inc. DS21290F-page 37
+MCP3201
+PRODUCT IDENTIFICATION SYSTEM
+To order or obtain information, e.g., on pricing or delivery, refer to the factory or the listed sales office.
+
+Device: MCP3201: 12-Bit A/D Converter w/SPI Interface
+MCP3201T: 12-Bit A/D Converter w/SPI Interface
+ (Tape and Reel)
+Grade: B: = ± LSB max INL (MSOP and TSSOP not available)
+C: = ± LSB max INL
+Temperature
+Range:
+I = -40°C to+85°C(Industrial)
+Package: MS = Plastic Micro Small Outline (MSOP), 8-lead
+P = Plastic DIP (300 mil Body), 8-lead
+SN = Plastic SOIC (150 mil Body), 8-lead
+ST = Plastic TSSOP (4.4 mm), 8-lead
+Examples:
+a) MCP3201-BI/P: B Grade,
+Industrial Temperature,
+8LD PDIP package.
+b) MCP3201-BI/SN: B Grade,
+Industrial Temperature,
+8LD SOIC package.
+c) MCP3201-CI/P: C Grade,
+Industrial Temperature,
+8LD PDIP package.
+d) MCP3201-CI/MS: C Grade,
+Industrial Temperature,
+8LD MSOP package.
+e) MCP3201-CI/SN: C Grade,
+Industrial Temperature,
+8LD SOIC package.
+f) MCP3201-CI/ST: C Grade,
+Industrial Temperature,
+8LD TSSOP package.
+g) MCP3201T-BI/SN: Tape and Reel, B Grade,
+Industrial Temperature,
+8LD SOIC package.
+h) MCP3201T-CI/MS: Tape and Reel, C Grade,
+Industrial Temperature,
+8LD MSOP package.
+i) MCP3201T-CI/SN: Tape and Reel, C Grade,
+Industrial Temperature,
+8LD SOIC package.
+j) MCP3201T-CI/ST: Tape and Reel, C Grade,
+Industrial Temperature,
+8LD TSSOP package.
+PART NO. X X /XX
+Grade Package Temperature
+Range
+Device
+MCP3201
+DS21290F-page 38  1998-2011 Microchip Technology Inc.
+NOTES:
+ 1998-2011 Microchip Technology Inc. DS21290F-page 39
+Information contained in this publication regarding device
+applications and the like is provided only for your convenience
+and may be superseded by updates. It is your responsibility to
+ensure that your application meets with your specifications.
+MICROCHIP MAKES NO REPRESENTATIONS OR
+WARRANTIES OF ANY KIND WHETHER EXPRESS OR
+IMPLIED, WRITTEN OR ORAL, STATUTORY OR
+OTHERWISE, RELATED TO THE INFORMATION,
+INCLUDING BUT NOT LIMITED TO ITS CONDITION,
+QUALITY, PERFORMANCE, MERCHANTABILITY OR
+FITNESS FOR PURPOSE. Microchip disclaims all liability
+arising from this information and its use. Use of Microchip
+devices in life support and/or safety applications is entirely at
+the buyer’s risk, and the buyer agrees to defend, indemnify and
+hold harmless Microchip from any and all damages, claims,
+suits, or expenses resulting from such use. No licenses are
+conveyed, implicitly or otherwise, under any Microchip
+intellectual property rights.
+Trademarks
+The Microchip name and logo, the Microchip logo, dsPIC,
+KEELOQ, KEELOQ logo, MPLAB, PIC, PICmicro, PICSTART,
+PIC32 logo, rfPIC and UNI/O are registered trademarks of
+Microchip Technology Incorporated in the U.S.A. and other
+countries.
+FilterLab, Hampshire, HI-TECH C, Linear Active Thermistor,
+MXDEV, MXLAB, SEEVAL and The Embedded Control
+Solutions Company are registered trademarks of Microchip
+Technology Incorporated in the U.S.A.
+Analog-for-the-Digital Age, Application Maestro, chipKIT,
+chipKIT logo, CodeGuard, dsPICDEM, dsPICDEM.net,
+dsPICworks, dsSPEAK, ECAN, ECONOMONITOR,
+FanSense, HI-TIDE, In-Circuit Serial Programming, ICSP,
+Mindi, MiWi, MPASM, MPLAB Certified logo, MPLIB,
+MPLINK, mTouch, Omniscient Code Generation, PICC,
+PICC-18, PICDEM, PICDEM.net, PICkit, PICtail, REAL ICE,
+rfLAB, Select Mode, Total Endurance, TSHARC,
+UniWinDriver, WiperLock and ZENA are trademarks of
+Microchip Technology Incorporated in the U.S.A. and other
+countries.
+SQTP is a service mark of Microchip Technology Incorporated
+in the U.S.A.
+All other trademarks mentioned herein are property of their
+respective companies.
+© 1998-2011, Microchip Technology Incorporated, Printed in
+the U.S.A., All Rights Reserved.
+ Printed on recycled paper.
+ISBN: 978-1-61341-572-6
+Note the following details of the code protection feature on Microchip devices:
+• Microchip products meet the specification contained in their particular Microchip Data Sheet.
+• Microchip believes that its family of products is one of the most secure families of its kind on the market today, when used in the
+intended manner and under normal conditions.
+• There are dishonest and possibly illegal methods used to breach the code protection feature. All of these methods, to our
+knowledge, require using the Microchip products in a manner outside the operating specifications contained in Microchip’s Data
+Sheets. Most likely, the person doing so is engaged in theft of intellectual property.
+• Microchip is willing to work with the customer who is concerned about the integrity of their code.
+• Neither Microchip nor any other semiconductor manufacturer can guarantee the security of their code. Code protection does not
+mean that we are guaranteeing the product as “unbreakable.”
+Code protection is constantly evolving. We at Microchip are committed to continuously improving the code protection features of our
+products. Attempts to break Microchip’s code protection feature may be a violation of the Digital Millennium Copyright Act. If such acts
+allow unauthorized access to your software or other copyrighted work, you may have a right to sue for relief under that Act.
+Microchip received ISO/TS-16949:2009 certification for its worldwide
+headquarters, design and wafer fabrication facilities in Chandler and
+Tempe, Arizona; Gresham, Oregon and design centers in California
+and India. The Company’s quality system processes and procedures
+are for its PIC® MCUs and dsPIC® DSCs, KEELOQ® code hopping
+devices, Serial EEPROMs, microperipherals, nonvolatile memory and
+analog products. In addition, Microchip’s quality system for the design
+and manufacture of development systems is ISO 9001:2000 certified.
+DS21290F-page 40  1998-2011 Microchip Technology Inc.
+AMERICAS
+Corporate Office
+2355 West Chandler Blvd.
+Chandler, AZ 85224-6199
+Tel: 480-792-7200
+Fax: 480-792-7277
+Technical Support:
+http://www.microchip.com/
+support
+Web Address:
+www.microchip.com
+Atlanta
+Duluth, GA
+Tel: 678-957-9614
+Fax: 678-957-1455
+Boston
+Westborough, MA
+Tel: 774-760-0087
+Fax: 774-760-0088
+Chicago
+Itasca, IL
+Tel: 630-285-0071
+Fax: 630-285-0075
+Cleveland
+Independence, OH
+Tel: 216-447-0464
+Fax: 216-447-0643
+Dallas
+Addison, TX
+Tel: 972-818-7423
+Fax: 972-818-2924
+Detroit
+Farmington Hills, MI
+Tel: 248-538-2250
+Fax: 248-538-2260
+Indianapolis
+Noblesville, IN
+Tel: 317-773-8323
+Fax: 317-773-5453
+Los Angeles
+Mission Viejo, CA
+Tel: 949-462-9523
+Fax: 949-462-9608
+Santa Clara
+Santa Clara, CA
+Tel: 408-961-6444
+Fax: 408-961-6445
+Toronto
+Mississauga, Ontario,
+Canada
+Tel: 905-673-0699
+Fax: 905-673-6509
+ASIA/PACIFIC
+Asia Pacific Office
+Suites 3707-14, 37th Floor
+Tower 6, The Gateway
+Harbour City, Kowloon
+Hong Kong
+Tel: 852-2401-1200
+Fax: 852-2401-3431
+Australia - Sydney
+Tel: 61-2-9868-6733
+Fax: 61-2-9868-6755
+China - Beijing
+Tel: 86-10-8569-7000
+Fax: 86-10-8528-2104
+China - Chengdu
+Tel: 86-28-8665-5511
+Fax: 86-28-8665-7889
+China - Chongqing
+Tel: 86-23-8980-9588
+Fax: 86-23-8980-9500
+China - Hangzhou
+Tel: 86-571-2819-3187
+Fax: 86-571-2819-3189
+China - Hong Kong SAR
+Tel: 852-2401-1200
+Fax: 852-2401-3431
+China - Nanjing
+Tel: 86-25-8473-2460
+Fax: 86-25-8473-2470
+China - Qingdao
+Tel: 86-532-8502-7355
+Fax: 86-532-8502-7205
+China - Shanghai
+Tel: 86-21-5407-5533
+Fax: 86-21-5407-5066
+China - Shenyang
+Tel: 86-24-2334-2829
+Fax: 86-24-2334-2393
+China - Shenzhen
+Tel: 86-755-8203-2660
+Fax: 86-755-8203-1760
+China - Wuhan
+Tel: 86-27-5980-5300
+Fax: 86-27-5980-5118
+China - Xian
+Tel: 86-29-8833-7252
+Fax: 86-29-8833-7256
+China - Xiamen
+Tel: 86-592-2388138
+Fax: 86-592-2388130
+China - Zhuhai
+Tel: 86-756-3210040
+Fax: 86-756-3210049
+ASIA/PACIFIC
+India - Bangalore
+Tel: 91-80-3090-4444
+Fax: 91-80-3090-4123
+India - New Delhi
+Tel: 91-11-4160-8631
+Fax: 91-11-4160-8632
+India - Pune
+Tel: 91-20-2566-1512
+Fax: 91-20-2566-1513
+Japan - Yokohama
+Tel: 81-45-471- 6166
+Fax: 81-45-471-6122
+Korea - Daegu
+Tel: 82-53-744-4301
+Fax: 82-53-744-4302
+Korea - Seoul
+Tel: 82-2-554-7200
+Fax: 82-2-558-5932 or
+82-2-558-5934
+Malaysia - Kuala Lumpur
+Tel: 60-3-6201-9857
+Fax: 60-3-6201-9859
+Malaysia - Penang
+Tel: 60-4-227-8870
+Fax: 60-4-227-4068
+Philippines - Manila
+Tel: 63-2-634-9065
+Fax: 63-2-634-9069
+Singapore
+Tel: 65-6334-8870
+Fax: 65-6334-8850
+Taiwan - Hsin Chu
+Tel: 886-3-5778-366
+Fax: 886-3-5770-955
+Taiwan - Kaohsiung
+Tel: 886-7-536-4818
+Fax: 886-7-330-9305
+Taiwan - Taipei
+Tel: 886-2-2500-6610
+Fax: 886-2-2508-0102
+Thailand - Bangkok
+Tel: 66-2-694-1351
+Fax: 66-2-694-1350
+EUROPE
+Austria - Wels
+Tel: 43-7242-2244-39
+Fax: 43-7242-2244-393
+Denmark - Copenhagen
+Tel: 45-4450-2828
+Fax: 45-4485-2829
+France - Paris
+Tel: 33-1-69-53-63-20
+Fax: 33-1-69-30-90-79
+Germany - Munich
+Tel: 49-89-627-144-0
+Fax: 49-89-627-144-44
+Italy - Milan
+Tel: 39-0331-742611
+Fax: 39-0331-466781
+Netherlands - Drunen
+Tel: 31-416-690399
+Fax: 31-416-690340
+Spain - Madrid
+Tel: 34-91-708-08-90
+Fax: 34-91-708-08-91
+UK - Wokingham
+Tel: 44-118-921-5869
+Fax: 44-118-921-5820
+Worldwide Sales and Service
+08/02/11

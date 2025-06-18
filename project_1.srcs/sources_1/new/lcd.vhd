@@ -46,10 +46,6 @@ ARCHITECTURE Behavioral OF lcd IS
     SIGNAL last_val_int : INTEGER := - 1;
     SIGNAL update_request : STD_LOGIC := '0';
 
-    SIGNAL setki : STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL dziesiatki : STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL jednosci : STD_LOGIC_VECTOR(7 DOWNTO 0);
-
     SIGNAL init_done : STD_LOGIC := '0';
     SIGNAL temperature_int : INTEGER := 0;
 
@@ -241,30 +237,35 @@ BEGIN
     PROCESS (lcd_clk, reset, state, spi_miso_data)
     BEGIN
         IF reset = '1' THEN
-            znak <= "01001000"; -- H
-        ELSIF rising_edge(lcd_clk) THEN
-            -- Calculate temperature using integer arithmetic
-            temperature_int <= ((to_integer(unsigned(spi_miso_data)) * 135000) / 4095) - 25000;
+            znak <= "00100000";
+        ELSIF falling_edge(lcd_clk) THEN
+            IF line_no = 1 THEN
 
-            IF state = WRITE_CHAR THEN
-                CASE to_integer(char_no) IS
-                    WHEN 0 => znak <= "00110100";  -- Display "T="
-                    WHEN 1 => znak <= "00101110";  -- Display "."
-                    WHEN 2 => 
-                        CASE (temperature_int / 1000) IS
-                            WHEN 0 => znak <= "00100000";  -- Space if no hundreds
-                            WHEN 1 => znak <= "00110001";  -- "1"
-                            WHEN OTHERS => znak <= "00110010"; -- "2"
-                        END CASE;
-                    WHEN 3 => 
-                        znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 100) mod 10) + 48, 8));
-                    WHEN 4 => 
-                        znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 10) mod 10) + 48, 8));
-                    WHEN 5 => 
-                        znak <= STD_LOGIC_VECTOR(to_unsigned((temperature_int mod 10) + 48, 8));
-                    WHEN 6 => znak <= "01000011";  -- Display "C"
-                    WHEN OTHERS => znak <= "00100000";  -- space
-                END CASE;
+                -- temperature_int <= to_integer(real(to_integer(unsigned(spi_miso_data))) * 0.0244 - 20);
+
+                -- Calculate temperature using integer arithmetic
+                temperature_int <= ((to_integer(unsigned(spi_miso_data)) * 1) / 41) - 20;
+
+                IF state = WRITE_CHAR THEN
+                    CASE to_integer(char_no) IS
+                        WHEN 0 => znak <= "00110100"; -- Display "T="
+                        WHEN 1 => znak <= "00101110"; -- Display "."
+                        WHEN 2 =>
+                            CASE (temperature_int / 1000) IS
+                                WHEN 0 => znak <= "00100000"; -- Space if no hundreds
+                                WHEN 1 => znak <= "00110001"; -- "1"
+                                WHEN OTHERS => znak <= "00110010"; -- "2"
+                            END CASE;
+                        WHEN 3 =>
+                            znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 100) MOD 10) + 48, 8));
+                        WHEN 4 =>
+                            znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 10) MOD 10) + 48, 8));
+                        WHEN 5 =>
+                            znak <= STD_LOGIC_VECTOR(to_unsigned((temperature_int MOD 10) + 48, 8));
+                        WHEN 6 => znak <= "01000011"; -- Display "C"
+                        WHEN OTHERS => znak <= "00100000"; -- space
+                    END CASE;
+                END IF;
             END IF;
         END IF;
     END PROCESS;
