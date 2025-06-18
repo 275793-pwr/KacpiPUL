@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.1 (lin64) Build 6140274 Wed May 21 22:58:25 MDT 2025
-| Date             : Wed Jun 18 11:31:08 2025
+| Date             : Wed Jun 18 11:40:36 2025
 | Host             : temp-mati running 64-bit Linux Mint 22.1
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -53,13 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     2300 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     1400 |     20800 |            6.73 |
-|   CARRY4       |    <0.001 |      308 |      8150 |            3.78 |
-|   Register     |    <0.001 |      166 |     41600 |            0.40 |
-|   Others       |     0.000 |        7 |       --- |             --- |
+| Slice Logic    |    <0.001 |     1952 |       --- |             --- |
+|   LUT as Logic |    <0.001 |     1234 |     20800 |            5.93 |
+|   CARRY4       |    <0.001 |      256 |      8150 |            3.14 |
+|   Register     |    <0.001 |      164 |     41600 |            0.39 |
+|   Others       |     0.000 |        6 |       --- |             --- |
+|   F7/F8 Muxes  |     0.000 |        1 |     32600 |           <0.01 |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |    <0.001 |     1778 |       --- |             --- |
+| Signals        |    <0.001 |     1496 |       --- |             --- |
 | I/O            |     0.002 |       10 |       210 |            4.76 |
 | Static Power   |     0.062 |          |           |                 |
 | Total          |     0.065 |          |           |                 |
@@ -74,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Vccint    |       0.950 |     0.008 |       0.002 |      0.006 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.011 |       0.000 |      0.011 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |

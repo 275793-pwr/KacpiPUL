@@ -248,21 +248,28 @@ BEGIN
 
                 IF state = WRITE_CHAR THEN
                     CASE to_integer(char_no) IS
-                        WHEN 0 => znak <= "00110100"; -- Display "T="
-                        WHEN 1 => znak <= "00101110"; -- Display "."
-                        WHEN 2 =>
-                            CASE (temperature_int / 1000) IS
-                                WHEN 0 => znak <= "00100000"; -- Space if no hundreds
-                                WHEN 1 => znak <= "00110001"; -- "1"
-                                WHEN OTHERS => znak <= "00110010"; -- "2"
-                            END CASE;
-                        WHEN 3 =>
+
+                    
+                        WHEN 0 => znak <= "01010100"; 
+                        WHEN 1 => znak <= "01100101"; 
+                        WHEN 2 => znak <= "01101101"; 
+                        WHEN 3 => znak <= "01110000"; 
+                        WHEN 4 => znak <= "01100101"; 
+                        WHEN 5 => znak <= "01110010"; 
+                        WHEN 6 => znak <= "01100001"; 
+                        WHEN 7 => znak <= "01110100"; 
+                        WHEN 8 => znak <= "01110101"; 
+                        WHEN 9 => znak <= "01110010"; 
+                        WHEN 10 => znak <= "01100001"; 
+                        WHEN 11 => znak <= "00111010";
+
+                        WHEN 12 =>
                             znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 100) MOD 10) + 48, 8));
-                        WHEN 4 =>
+                        WHEN 13 =>
                             znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 10) MOD 10) + 48, 8));
-                        WHEN 5 =>
+                        WHEN 14 =>
                             znak <= STD_LOGIC_VECTOR(to_unsigned((temperature_int MOD 10) + 48, 8));
-                        WHEN 6 => znak <= "01000011"; -- Display "C"
+                        WHEN 15 => znak <= "01000011"; -- Display "C"
                         WHEN OTHERS => znak <= "00100000"; -- space
                     END CASE;
                 END IF;
