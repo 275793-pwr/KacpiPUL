@@ -244,35 +244,29 @@ BEGIN
                 -- temperature_int <= to_integer(real(to_integer(unsigned(spi_miso_data))) * 0.0244 - 20);
 
                 -- Calculate temperature using integer arithmetic
-                temperature_int <= ((to_integer(unsigned(spi_miso_data)) * 1) / 41) - 20;
+                temperature_int <= ((to_integer(unsigned(spi_miso_data)) * 1) / 8) - 2;
 
                 IF state = WRITE_CHAR THEN
                     CASE to_integer(char_no) IS
-
-                    
-                        WHEN 0 => znak <= "01010100"; 
-                        WHEN 1 => znak <= "01100101"; 
-                        WHEN 2 => znak <= "01101101"; 
-                        WHEN 3 => znak <= "01110000"; 
-                        WHEN 4 => znak <= "01100101"; 
-                        WHEN 5 => znak <= "01110010"; 
-                        WHEN 6 => znak <= "01100001"; 
-                        WHEN 7 => znak <= "01110100"; 
-                        WHEN 8 => znak <= "01110101"; 
-                        WHEN 9 => znak <= "01110010"; 
-                        WHEN 10 => znak <= "01100001"; 
-                        WHEN 11 => znak <= "00111010";
-
-                        WHEN 12 =>
-                            znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 100) MOD 10) + 48, 8));
-                        WHEN 13 =>
-                            znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 10) MOD 10) + 48, 8));
-                        WHEN 14 =>
+                        WHEN 0 => znak <= "01010100";
+                        WHEN 1 => znak <= "01100101";
+                        WHEN 2 => znak <= "01101101";
+                        WHEN 3 => znak <= "01110000";
+                        WHEN 4 => znak <= "00111010";
+                        
+                        WHEN 6 =>
+                        znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 100) MOD 10) + 48, 8));
+                        WHEN 7 =>
+                        znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 10) MOD 10) + 48, 8));
+                        WHEN 8 => znak <= "00101110"; -- .
+                        WHEN 9 =>
                             znak <= STD_LOGIC_VECTOR(to_unsigned((temperature_int MOD 10) + 48, 8));
-                        WHEN 15 => znak <= "01000011"; -- Display "C"
+                        WHEN 10 => znak <= "01000011"; -- Display "C"
                         WHEN OTHERS => znak <= "00100000"; -- space
                     END CASE;
                 END IF;
+            ELSE
+                znak <= "00100000"; -- space
             END IF;
         END IF;
     END PROCESS;
