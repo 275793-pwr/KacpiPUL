@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Jun 18 10:27:15 2025
-# Process ID         : 5281
+# Start of session at: Wed Jun 18 10:44:48 2025
+# Process ID         : 32874
 # Current directory  : /home/mati/Documents/KacpiPUL/project_1.runs/impl_1
 # Command line       : vivado -log main.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source main.tcl -notrace
 # Log file           : /home/mati/Documents/KacpiPUL/project_1.runs/impl_1/main.vdi
@@ -13,12 +13,12 @@
 # Platform           : Linuxmint
 # Operating System   : Linux Mint 22.1
 # Processor Detail   : 13th Gen Intel(R) Core(TM) i7-13620H
-# CPU Frequency      : 3700.000 MHz
+# CPU Frequency      : 1735.225 MHz
 # CPU Physical cores : 10
 # CPU Logical cores  : 16
 # Host memory        : 33258 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 35405 MB
-# Available Virtual  : 31223 MB
+# Available Virtual  : 29642 MB
 #-----------------------------------------------------------
 source main.tcl -notrace

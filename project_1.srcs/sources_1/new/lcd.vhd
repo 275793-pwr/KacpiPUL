@@ -51,6 +51,7 @@ ARCHITECTURE Behavioral OF lcd IS
     SIGNAL jednosci : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
     SIGNAL init_done : STD_LOGIC := '0';
+    SIGNAL temperature_int : INTEGER := 0;
 
 BEGIN
 
@@ -235,31 +236,35 @@ BEGIN
     END PROCESS;
 
     -------------------------------------------------------------------------
-    --  Znak do wy�wietlenia zale�ny od indeksu char_no
+    --  Znak do wywietlenia zaleny od indeksu char_no
     -------------------------------------------------------------------------
-    PROCESS (lcd_clk, reset, state)
+    PROCESS (lcd_clk, reset, state, spi_miso_data)
     BEGIN
         IF reset = '1' THEN
             znak <= "01001000"; -- H
-        ELSIF falling_edge(lcd_clk) THEN
+        ELSIF rising_edge(lcd_clk) THEN
+            -- Calculate temperature using integer arithmetic
+            temperature_int <= ((to_integer(unsigned(spi_miso_data)) * 135000) / 4095) - 25000;
+
             IF state = WRITE_CHAR THEN
-                IF line_no = 1 THEN
-                    -- CASE to_integer(char_no) IS
-                    --     WHEN 0 => znak <= "00110000";
-                    --     WHEN 1 => znak <= "00110001";
-                        
-                    --     WHEN OTHERS => znak <= "00100000"; -- space
-                    -- END CASE;
-                    if char_no < 12 then
-                        if spi_miso_data(to_integer(char_no)) = '1' then
-                            znak <= "00110001";
-                            else
-                            znak <= "00110000"; 
-                        end if ;
-                        else
-                            znak <= "00100000"; -- space
-                    end if ;
-                END IF;
+                CASE to_integer(char_no) IS
+                    WHEN 0 => znak <= "00110100";  -- Display "T="
+                    WHEN 1 => znak <= "00101110";  -- Display "."
+                    WHEN 2 => 
+                        CASE (temperature_int / 1000) IS
+                            WHEN 0 => znak <= "00100000";  -- Space if no hundreds
+                            WHEN 1 => znak <= "00110001";  -- "1"
+                            WHEN OTHERS => znak <= "00110010"; -- "2"
+                        END CASE;
+                    WHEN 3 => 
+                        znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 100) mod 10) + 48, 8));
+                    WHEN 4 => 
+                        znak <= STD_LOGIC_VECTOR(to_unsigned(((temperature_int / 10) mod 10) + 48, 8));
+                    WHEN 5 => 
+                        znak <= STD_LOGIC_VECTOR(to_unsigned((temperature_int mod 10) + 48, 8));
+                    WHEN 6 => znak <= "01000011";  -- Display "C"
+                    WHEN OTHERS => znak <= "00100000";  -- space
+                END CASE;
             END IF;
         END IF;
     END PROCESS;
