@@ -3,8 +3,8 @@
 # SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Wed Jun 18 11:46:51 2025
-# Process ID         : 304678
+# Start of session at: Wed Jun 18 11:53:11 2025
+# Process ID         : 338709
 # Current directory  : /home/mati/Documents/KacpiPUL/project_1.runs/synth_1
 # Command line       : vivado -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
 # Log file           : /home/mati/Documents/KacpiPUL/project_1.runs/synth_1/main.vds
@@ -19,6 +19,6 @@
 # Host memory        : 33258 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 35405 MB
-# Available Virtual  : 29383 MB
+# Available Virtual  : 29221 MB
 #-----------------------------------------------------------
 source main.tcl -notrace

@@ -244,7 +244,7 @@ BEGIN
                 -- temperature_int <= to_integer(real(to_integer(unsigned(spi_miso_data))) * 0.0244 - 20);
 
                 -- Calculate temperature using integer arithmetic
-                temperature_int <= ((to_integer(unsigned(spi_miso_data)) * 1) / 8) - 2;
+                temperature_int <= ((to_integer(unsigned(spi_miso_data)) * 1) / 4) - 600;
 
                 IF state = WRITE_CHAR THEN
                     CASE to_integer(char_no) IS
@@ -261,7 +261,8 @@ BEGIN
                         WHEN 8 => znak <= "00101110"; -- .
                         WHEN 9 =>
                             znak <= STD_LOGIC_VECTOR(to_unsigned((temperature_int MOD 10) + 48, 8));
-                        WHEN 10 => znak <= "01000011"; -- Display "C"
+                        WHEN 10 => znak <= "11011111"; -- deg
+                        WHEN 11 => znak <= "01000011"; -- Display "C"
                         WHEN OTHERS => znak <= "00100000"; -- space
                     END CASE;
                 END IF;
