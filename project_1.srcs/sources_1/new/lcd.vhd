@@ -244,7 +244,7 @@ BEGIN
                 -- temperature_int <= to_integer(real(to_integer(unsigned(spi_miso_data))) * 0.0244 - 20);
 
                 -- Calculate temperature using integer arithmetic
-                temperature_int <= ((to_integer(unsigned(spi_miso_data)) * 1) / 4) - 200;
+                temperature_int <= ((to_integer(unsigned(spi_miso_data)) * 1) / 4) - 0;
 
                 IF state = WRITE_CHAR THEN
                     CASE to_integer(char_no) IS
